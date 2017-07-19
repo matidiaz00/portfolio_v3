@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Bug con la medida "VH" en mobile
+   ========================================================================== */
+
+/**
+ * Dispositivos
+ *
+ * @device-nombre: ancho alto; // Descripción
+ */
+
+@device-ipad:    768px 1024px; // iPad (all versions)
+@device-iphone4: 320px 480px;  // iPhone 4
+@device-iphone5: 320px 568px;  // iPhone 5, 5C, 5S
+@device-samsung: 320px 640px;  // Samsung S4
+@device-moto:    360px 640px;  // motorola 3g // height = 640px(viewport) - 128px(Navbar Chrome)
+@devices: @device-ipad @device-iphone4 @device-iphone5 @device-moto @device-samsung;
+
+/**
+ * Fix for vw, vh, vmin, vmax on iOS 7.
+ * http://caniuse.com/#feat=viewport-units
+ *
+ * This fix works by replacing viewport units with px values on known screen sizes.
+ *
+ * iPhone 6 and 6 Plus cannot run iOS 7, so are not targeted by this fix.
+ * Target devices running iOS 8+ will incidentally execute the media query,
+ * but this will still produce the expected result; so this is not a problem.
+ *
+ * As an example, replace:
+ *
+ *   height: 50vh;
+ *   font-size: 5vmin;
+ *
+ * with:
+ *
+ *   .viewport-unit(height, 50vh);
+ *   .viewport-unit(font-size, 5vmin);
+ */
+
+.viewport-unit(@property, @value) {
+	@{property}: @value;
+
+	.viewport-unit-devices(@property, @value, @devices);
+}
+
+.viewport-unit-devices(@property, @value, @devices, @i: 1) when (@i <= length(@devices)) {
+	@device: extract(@devices, @i);
+
+	@device-width: extract(@device, 1);
+	@device-height: extract(@device, 2);
+
+	@unit: get-unit(@value);
+	@percent: (@value / unit(1, @unit));
+
+	@percent-width: (@device-width * @percent / 100);
+	@percent-height: (@device-height * @percent / 100);
+
+	@media only screen
+		and (-webkit-min-device-pixel-ratio: 1)
+		and (device-width: @device-width)
+		and (device-height: @device-height)
+	{
+		.viewport-unit-device-medias(@property, @value, @unit,  @percent-width,  @percent-height);
+	}
+  
+	.viewport-unit-devices(@property, @value, @devices, (@i + 1));
+}
+
+.viewport-unit-device-medias(@property, @value, vw,  @percent-width,  @percent-height) {
+	@media (orientation: portrait) {
+		@{property}: @percent-width;
+	}
+	@media (orientation: landscape) {
+		@{property}: @percent-height;
+	}
+}
+
+.viewport-unit-device-medias(@property, @value, vh,  @percent-width,  @percent-height) {
+	@media (orientation: portrait) {
+		@{property}: @percent-height;
+	}
+	@media (orientation: landscape) {
+		@{property}: @percent-width;
+	}
+}
+
+.viewport-unit-device-medias(@property, @value, vmin,  @percent-width,  @percent-height) {
+	@{property}: @percent-width;
+}
+
+.viewport-unit-device-medias(@property, @value, vmax,  @percent-width,  @percent-height) {
+	@{property}: @percent-height;
+}
+
+/**
+ * Fix for vw, vh, vmin, vmax on iOS 7.
+ * http://caniuse.com/#feat=viewport-units
+ *
+ * This fix works by replacing viewport units with px values on known screen sizes.
+ *
+ * iPhone 6 and 6 Plus cannot run iOS 7, so are not targeted by this fix.
+ * Target devices running iOS 8+ will incidentally execute the media query,
+ * but this will still produce the expected result; so this is not a problem.
+ *
+ * As an example, replace:
+ *
+ *   height: 100vh;
+	 height: -webkit-calc(100vh - 63px);
+     height: -moz-calc(100vh - 63px);
+     height: calc(100vh - 63px);
+ *
+ * with:
+ *
+ *   .viewport-unit-cal(height, 100vh, -, 63px);
+ *
+ *
+ * Los "128px" son de la barra de navecacion de chrome
+ */
+
+.viewport-unit-cal(@property, @value, @sym, @cal) {
+	@{property}: @value;
+	@{property}: -webkit-calc(@value @sym @cal);
+	@{property}: -moz-calc(@value @sym @cal);
+	@{property}: calc(@value @sym @cal);
+
+	.viewport-unit-cal-devices(@property, @value, @sym, @cal, @devices);
+}
+
+.viewport-unit-cal-devices(@property, @value, @sym, @cal, @devices, @i: 1) when (@i <= length(@devices)) {
+	@device: extract(@devices, @i);
+
+	@device-width: extract(@device, 1);
+	@device-height: extract(@device, 2);
+
+	@unit: get-unit(@value);
+	@percent: (@value / unit(1, @unit));
+
+	@percent-width: (@device-width * @percent / 100);
+	@percent-height: (@device-height * @percent / 100);
+
+	@media only screen
+		and (-webkit-min-device-pixel-ratio: 1)
+		and (device-width: @device-width)
+		and (device-height: @device-height)
+	{
+		.viewport-unit-cal-device-medias(@property, @value, @sym, @cal, @unit, @percent-width,  @percent-height);
+	}
+  
+	.viewport-unit-cal-devices(@property, @value, @sym, @cal, @devices, (@i + 1));
+}
+
+.viewport-unit-cal-device-medias(@property, @value, @sym, @cal, vw,  @percent-width,  @percent-height) {
+	@media (orientation: portrait) {
+		@{property}: @percent-width;
+		@{property}: -webkit-calc(@percent-width @sym (@cal + 128px));
+		@{property}: -moz-calc(@percent-width @sym (@cal + 128px));
+		@{property}: calc(@percent-width @sym (@cal + 128px));
+	}
+	@media (orientation: landscape) {
+		@{property}: @percent-height;
+		@{property}: -webkit-calc(@percent-height @sym (@cal + 128px));
+		@{property}: -moz-calc(@percent-height @sym (@cal + 128px));
+		@{property}: calc(@percent-height @sym (@cal + 128px));
+	}
+}
+
+.viewport-unit-cal-device-medias(@property, @value, @sym, @cal, vh,  @percent-width,  @percent-height) {
+	@media (orientation: portrait) {
+		@{property}: @percent-height;
+		@{property}: -webkit-calc(@percent-height @sym (@cal + 128px));
+		@{property}: -moz-calc(@percent-height @sym (@cal + 128px));
+		@{property}: calc(@percent-height @sym (@cal + 128px));
+	}
+	@media (orientation: landscape) {
+		@{property}: @percent-width;
+		@{property}: -webkit-calc(@percent-width @sym (@cal + 128px));
+		@{property}: -moz-calc(@percent-width @sym (@cal + 128px));
+		@{property}: calc(@percent-width @sym (@cal + 128px));
+	}
+}
+.viewport-unit-cal-device-medias(@property, @value, @sym, @cal, vmin,  @percent-width,  @percent-height) {
+	@{property}: @percent-width;
+	@{property}: -webkit-calc(@percent-width @sym (@cal + 128px));
+	@{property}: -moz-calc(@percent-width @sym (@cal + 128px));
+	@{property}: calc(@percent-width @sym (@cal + 128px));
+}
+.viewport-unit-cal-device-medias(@property, @value, @sym, @cal, vmax,  @percent-width,  @percent-height) {
+	@{property}: @percent-height;
+	@{property}: -webkit-calc(@percent-height @sym (@cal + 128px));
+	@{property}: -moz-calc(@percent-height @sym (@cal + 128px));
+	@{property}: calc(@percent-height @sym (@cal + 128px));
+}

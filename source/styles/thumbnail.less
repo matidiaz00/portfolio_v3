@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Thumbnail
+   ========================================================================== */
+
+.thumbnail {
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+	border: 0;
+	height: 100%;
+	text-align: center;
+	margin-bottom: 30px;
+	box-shadow: 0 1px 7px 0 rgba(0,0,0,0.05), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+	background-color: @main-color;
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 4px;
+}
+
+a.thumbnail,
+a.thumbnail.active,
+a.thumbnail:focus,
+a.thumbnail:hover {
+	color: #fff;
+}
+
+.thumbnail .hover {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 30px);
+	height: calc(100% - 30px);
+	margin: 15px;
+	color: #fff;
+
+	z-index: 3;
+
+	-webkit-transition: all 200ms;
+	-moz-transition: all 200ms;
+	-ms-transition: all 200ms;
+	-o-transition: all 200ms;
+	transition: all 200ms;
+
+	-webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+}
+
+.thumbnail:hover .hover {
+	@media @desktop-lg {
+		/*opacity: 0.9;*/
+		-webkit-transform: scale(1);
+	    -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	    -o-transform: scale(1);
+	    transform: scale(1);
+	}
+}
+
+.thumbnail .hover::before {
+	content: "";
+
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	.gradient(main);
+
+	opacity: 0.9;
+}
+
+.thumbnail .material-icons {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    font-size: 71px;
+}
+
+.thumbnail:hover .hover span {
+	@media @desktop-lg {
+		position: relative;
+		top: 45%;
+		transform: translateY(-45%);
+		-webkit-transform: translateY(-45%);
+		font-family: 'Montserrat';
+		text-transform: uppercase;
+		border: solid 1px #fff;
+		padding: 10px 20px;
+	}
+}
+
+/*
+.thumbnail .hover::after {
+	content: "Mas Info";
+	position: relative;
+	top: 45%;
+	transform: translateY(-45%);
+	-webkit-transform: translateY(-45%);
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+	border: solid 1px #fff;
+	padding: 10px 20px;
+}
+*/
+.thumbnail>img {
+	width: 100%;
+	position: relative;
+	z-index: 2;
+	border-radius: 4px;
+}
+
+.thumbnail .loader .circular {
+	margin-top: 50px;
+}
+
+.edit-thumbnail {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 25px;
+    left: 0;
+}

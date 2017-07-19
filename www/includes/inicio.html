@@ -1,0 +1,122 @@
+<header class="carousel color" ng-controller="CarouselCtrl">
+	<div class="loader white" ng-show="toggle == 0">
+		<svg class="circular">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+		</svg>
+	</div>
+	<ul rn-carousel rn-carousel-deep-watch rn-carousel-controls rn-carousel-controls-allow-loop ng-if="itemCarousel" class="image" ng-class="{ 'logued': logued }" ng-show="toggle == 1">
+		<li ng-repeat="carousel in itemCarousel">
+
+			<style type="text/css">
+				#image_carousel_{{ $index + 1 }} {
+					background-image: url({{ carousel.imagen_desktop }});
+				}
+				@media (max-width: 768px) {
+					#image_carousel_{{ $index + 1 }} {
+						background-image: url({{ carousel.imagen_mobile }});
+					}
+				}
+			</style>
+
+			<div class="carousel_wrapper">
+				<div class="container">
+					<h1 ng-attr-contenteditable="{{logued}}" placeholder="Titulo princial" ng-model="carousel.titulo" ng-change="itemCarousel.$save(carousel)" strip-br="true"></h1>
+					<p ng-attr-contenteditable="{{logued}}" placeholder="Sub titulo" ng-model="carousel.subtitulo" ng-change="itemCarousel.$save(carousel)" strip-br="true"></p>
+				</div>
+			</div>
+
+			<div class="image_carousel" id="image_carousel_{{ $index + 1 }}"></div>
+
+			<span ng-show="logued" class="image_edit">
+				<a href="" ng-click="open(carousel)">
+					<i class="material-icons">camera_alt</i>
+				</a>
+			</span>
+
+			<script type="text/ng-template" id="popup.html">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title">Carrousel numero {{ slide.$id }}</h3>
+                </div>
+                <div class="modal-body" id="modal-body">
+                	<div class="row">
+                		<div class="col-xs-6">
+		                    Imagen desktop: <br><br>
+		                    <img src="{{ slide.imagen_desktop }}" width="100%"><br><br>
+							<input type="text" ng-model="slide.imagen_desktop" />
+						</div>
+						<div class="col-xs-6">
+							Imagen mobile: <br><br>
+							<img src="{{ slide.imagen_mobile }}" width="100%"><br><br>
+							<input type="text" ng-model="slide.imagen_mobile" />
+						</div>
+					</div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-raised btn-danger" type="button" ng-click="remove()">Eliminar</button>
+                    <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                </div>
+            </script>
+
+		</li>
+	</ul>
+
+	<div class="add_slide" ng-show="logued">
+		Cantidad {{itemCarousel.length}}
+		<span class="btn-group-sm">
+			<a href="" ng-click="newSlide()" class="btn btn-default btn-fab">
+				<i class="material-icons">add</i>
+			</a>
+		</span>
+	</div>
+</header>
+
+<article ng-controller="ProyectosCtrl">
+	<div class="container">
+		<h2 class="text-center">Últimos proyectos en los que colaboré</h2>
+		<div class="loader color" ng-show="toggle == 0">
+			<svg class="circular">
+				<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+			</svg>
+		</div>
+		<div id="proy" ng-show="toggle == 1">
+			<div ng-repeat="proyecto in itemProyectos_interna | orderBy:'id':true | limitTo:7">
+				<style type="text/css">
+					#image_proy_{{ $index + 1 }} {
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, {{ proyecto.background.firstcolor }};
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -moz-linear-gradient(-45deg, {{ proyecto.background.firstcolor }} 0%, {{ proyecto.background.secondcolor }} 50%, {{ proyecto.background.thirdcolor }} 100%);
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -webkit-gradient(linear, left top, right bottom, color-stop(0%,{{ proyecto.background.firstcolor }}), color-stop(50%,{{ proyecto.background.secondcolor }}), color-stop(100%,{{ proyecto.background.thirdcolor }}));
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -webkit-linear-gradient(-45deg, {{ proyecto.background.firstcolor }} 0%,{{ proyecto.background.secondcolor }} 50%,{{ proyecto.background.thirdcolor }} 100%);
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -o-linear-gradient(-45deg, {{ proyecto.background.firstcolor }} 0%,{{ proyecto.background.secondcolor }} 50%,{{ proyecto.background.thirdcolor }} 100%);
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -ms-linear-gradient(-45deg, {{ proyecto.background.firstcolor }} 0%,{{ proyecto.background.secondcolor }} 50%,{{ proyecto.background.thirdcolor }} 100%);
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, linear-gradient(135deg, {{ proyecto.background.firstcolor }} 0%,{{ proyecto.background.secondcolor }} 50%,{{ proyecto.background.thirdcolor }} 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ proyecto.background.firstcolor }}', endColorstr='{{ proyecto.background.thirdcolor }}',GradientType=1 );
+                    }
+                    #image_proy_{{ $index + 1 }} .background {
+						background-image: url({{ proyecto.thumbnail }});
+						background-size: cover;
+    					background-position: center center;
+					}
+				</style>
+				<a class="thumbnail" href="#/proyectos/{{proyecto.$id}}" id="image_proy_{{ $index + 1 }}" ng-click="gotoTop()">
+					<div class="background"></div>
+					<span class="hover">
+						<i class="material-icons">search</i>
+					</span>
+				</a>
+			</div>
+			<div>
+				<a class="thumbnail" href="#/proyectos" ng-click="gotoTop()">
+					<i class="material-icons">more_horiz</i>
+					<span class="hover">
+						<span>Más Proyectos</span>
+					</span>
+				</a>
+			</div>
+		</div>
+		<!--
+		<p class="text-center">
+			<a href="#/proyectos" class="btn btn-raised btn-default btn-lg">Más proyectos</a>
+		</p>
+		-->
+	</div>
+</article>

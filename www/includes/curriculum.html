@@ -1,0 +1,105 @@
+<header>
+	<div class="container color">
+        <h1 ng-attr-contenteditable="{{logued}}" ng-model="itemCurriculum.titulo" strip-br="true"></h1>
+	</div>
+</header>
+
+<article>
+	<div class="container">
+		<h2>Introduccion</h2>
+        <div ng-attr-contenteditable="{{logued}}" ng-model="itemCurriculum.introduccion" strip-br="true"></div>
+        <br>
+
+
+		<div class="row text-center" id="cvcard">
+
+            <div class="col-md-6" ng-repeat="col in itemColumnas">
+                <div class="card">
+
+                    <div class="imagen">
+                        <h2 ng-attr-contenteditable="{{logued}}" ng-model="col.titulo" ng-change="itemColumnas.$save(col)" strip-br="true"></h2>
+                        <p>Version: <span ng-attr-contenteditable="{{logued}}" ng-model="col.fecha" ng-change="itemColumnas.$save(col)" strip-br="true"></span></p>
+                        <img ng-src="{{ col.imagen }}" ng-click="!logued || openImagen(col)" />
+
+                        <script type="text/ng-template" id="imagen.html">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="modal-title">Imagen de: {{ itemHabilidad.titulo }}</h3>
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                                <p>Archivo: <input type="text" placeholder="Version" ng-model="itemHabilidad.imagen" /></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                            </div>
+                        </script>
+                    </div>
+                    
+                    <div class="body">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h3>Descripcion</h3>
+                                <div ng-attr-contenteditable="{{logued}}" ng-model="col.informacion_extra" ng-change="itemColumnas.$save(col)" strip-br="true"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <h3>Caracteristicas</h3>
+                                <p ng-repeat="carac in col.caracteristicas">
+                                    {{ carac }}
+                                </p>
+                                <button ng-show="logued" class="btn btn-raised btn-default" type="button" ng-click="open(col)">Editar categorias</button>
+                                <script type="text/ng-template" id="popup.html">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title" id="modal-title">Items de: {{ itemHabilidad.titulo }}</h3>
+                                    </div>
+                                    <div class="modal-body" id="modal-body">
+                                        <p>Categorias: <a href="#/caracteristicas" ng-click="close()">Editar</a></p>
+                                        <form class="form row">
+                                            <div class="col-xs-4" ng-repeat="carac in itemCaracteristicas">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input
+                                                            type="checkbox"
+                                                            name="car"
+                                                            ng-true-value="'{{carac.texto}}'"
+                                                            ng-false-value="{}"
+                                                            ng-model="itemHabilidad.caracteristicas[carac.$id]">
+                                                        <span class="checkbox-material">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                        {{ carac.texto }}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-default" type="button" ng-click="close()">Cerrar</button>
+                                    </div>
+                                </script>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!--<a href="{{ col.archivo }}" target="_blank" class="btn btn-raised btn-default">Descargar</a>-->
+                        <a ng-href="{{ logued ? '' : col.archivo }}" target="_blank" class="btn btn-raised btn-default" ng-click="!logued || openDescarga(col)">Descargar</a>
+
+                        <script type="text/ng-template" id="descarga.html">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="modal-title">Archivo de: {{ itemHabilidad.titulo }}</h3>
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                                <p>Archivo: <input type="text" placeholder="Version" ng-model="itemHabilidad.archivo" /></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                            </div>
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+	</div>
+</article>

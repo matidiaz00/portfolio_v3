@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Cargando
+   ========================================================================== */
+
+// Ancho
+@ancho: 100px;
+
+.loader {
+	//position: absolute;
+	width: @ancho;
+	height: @ancho;
+	//left: 50%;
+	//top: 20%;
+	display: block;
+    margin: 0 auto;
+}
+
+.circular {
+	animation: rotate 2s linear infinite;
+	height: @ancho;
+	width: @ancho;
+	position: relative;
+}
+
+.path {
+	stroke-dasharray: 1,200;
+	stroke-dashoffset: 0;
+	animation:
+		dash 1.5s ease-in-out infinite,
+		color 6s ease-in-out infinite
+	;
+	stroke-linecap: square;
+}
+
+.loader.white .path {
+    stroke: #fff;
+}
+
+.loader.color .path {
+    stroke: @main-color;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1,200;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 89,200;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 89,200;
+		stroke-dashoffset: -124;
+	}
+}
+
+.thumbnail .loader {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}

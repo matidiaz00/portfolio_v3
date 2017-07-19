@@ -1,0 +1,192 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html ng-app="matidiazApp" lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html ng-app="matidiazApp" lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html ng-app="matidiazApp" lang="es" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html ng-app="matidiazApp" lang="es" class="no-js"> <!--<![endif]-->
+	<head>
+
+		<!-- ==========================================================================
+			 Meta tags y otros
+			 ========================================================================== -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!--<link rel="apple-touch-icon" href="assets/img/app/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="assets/img/app/favicon.png" />-->		
+
+		<!-- ==========================================================================
+			 Google Fonts
+			 ========================================================================== -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,800,800italic">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<!-- ==========================================================================
+			 Librerias CSS
+			 ========================================================================== -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/bootstrap-material-design.css">
+		<link rel="stylesheet" href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-carousel/1.0.1/angular-carousel.min.css">
+
+		<!-- ==========================================================================
+			 Estilos propios del sitio
+			 ========================================================================== -->
+		<link rel="stylesheet" href="assets/styles.min.css">
+
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	</head>
+	<body ng-class="fixed">
+	<div>
+		<!--[if lt IE 8]>
+			<p class="browserupgrade">Estás utilizando un navegador obsoleto. Por favor <a href="http://outdatedbrowser.com/es/" target="_blank">actualice su navegador</a> para mejorar su experiencia.</p>
+		<![endif]-->
+
+		<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl" ng-class="classCollapse + 'True'">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button type="button" class="collapsed navbar-toggle" ng-click="openMobileNav(); addFixed()">
+						<span class="sr-only">Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#/inicio" ng-click="gotoTop()">
+						<svg
+							version="1.1"
+							id="logo_kd"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							x="0px" y="0px"
+							viewBox="0 0 73.094 40.718"
+							enable-background="new 0 0 73.094 40.718"
+							xml:space="preserve">
+								<polygon
+									points="73.094,0.459 73.094,40.718 0,40.718 0,0 18.273,25.694 36.879,0 54.82,25.694 "/>
+						</svg>
+					</a>
+				</div>
+
+				<div class="navbar-collapse" ng-class="classCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="" ng-click="onlyCloseMobileNav(); onlyRemoveFixed()">
+								<i class="material-icons">close</i>
+							</a>
+						</li>
+						<li ng-repeat="menu in itemMenu" ng-class="{ active: isActive('/{{menu.url}}') }">
+							<a href="#/{{ menu.url }}" ng-click="gotoTop(); onlyCloseMobileNav(); onlyRemoveFixed()">
+								{{ menu.texto }}
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<span class="bg-navbar-mobile" ng-click="onlyCloseMobileNav(); onlyRemoveFixed()"></span>
+
+			</div>
+		</nav>
+
+		<div class="main-wrapper">
+			<div ng-view></div>
+		</div>
+
+		<footer>
+			<div class="container color">
+				<div class="loader" ng-show="toggle1 == 0 || toggle2 == 0 || toggle3 == 0 || toggle4 == 0">
+					<svg class="circular">
+						<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+					</svg>
+				</div>
+				<div class="row" ng-show="toggle1 == 1 || toggle2 == 1 || toggle3 == 1 || toggle4 == 1">
+					<div class="col-lg-3 col-md-6" ng-controller="SobreMiCtrl">
+						<h3 ng-bind-html="itemSobreMi.titulo"></h3>
+						<div ng-bind-html="itemSobreMi.introduccion"></div>
+						<a href="#/sobre_mi" class="btn btn-raised btn-default" ng-click="gotoTop()">Más información</a>
+					</div>
+					<div class="col-lg-3 col-md-6" ng-controller="HabilidadesCtrl">
+						<h3 ng-bind-html="itemHabilidades.titulo"></h3>
+						<div ng-bind-html="itemHabilidades.introduccion"></div>
+						<a href="#/habilidades" class="btn btn-raised btn-default" ng-click="gotoTop()">Más información</a>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div ng-controller="ContactoCtrl">
+							<h3 ng-bind-html="itemContacto.titulo"></h3>
+							<p><strong>Correo:</strong> <a href="mailto:{{ itemContacto.correo }}" ng-bind-html="itemContacto.correo"></a></p>
+							<p><strong>Celular:</strong> {{ itemContacto.celular }}</p>
+							<p><strong>Skype:</strong> {{ itemContacto.skype }}</p>
+							<a href="#/contacto" class="btn btn-raised btn-default" ng-click="gotoTop()">Más información</a>
+						</div>
+						<br>
+						<div ng-controller="ExperienciaCtrl">
+							<h3 ng-bind-html="itemExperiencia.titulo"></h3>
+							<div ng-bind-html="itemExperiencia.introduccion"></div>
+							<a href="#/experiencia" class="btn btn-raised btn-default" ng-click="gotoTop()">Más información</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6" ng-controller="ContactoCtrl">
+						<h3 ng-bind-html="itemContacto.titulo"></h3>
+						<!--
+						<div class="row social_icons social-white">
+							<a class="col-md-6 col-sm-4 col-xs-6" ng-repeat="iremRedesSociales in itemContacto.redes_sociales" target="_blank" href="{{ iremRedesSociales.url }}">
+								<span class="social-icon" id="{{ iremRedesSociales.id }}"></span>
+								{{ iremRedesSociales.texto }}
+							</a>
+						</div>
+						-->
+						<div class="social_icons social-white row">
+                            <div ng-repeat="iremRedesSociales in itemContacto.redes_sociales">
+                                <a target="_blank" href="{{ iremRedesSociales.url }}" class="btn btn-default btn-fab">
+                                    <span ng-bind-html="iremRedesSociales.icono | toTrusted"></span>
+                                </a>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	<div>
+
+		<!-- ==========================================================================
+			 Librerias de JavaScript
+			 ========================================================================== -->
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+		<script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-touch.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-carousel/1.0.1/angular-carousel.min.js"></script>
+		<script type="text/javascript" src="http://monospaced.github.io/angular-elastic/elastic.js"></script>
+		<script type="text/javascript" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+		<script type="text/javascript" src="matidiaz/source/javascript/angular-contenteditable.js"></script>
+
+		<!-- ==========================================================================
+			 JavaScript propio del sitio
+			 ========================================================================== -->
+		<script type="text/javascript" src="assets/javascript.min.js"></script>
+
+		<!-- ==========================================================================
+			 Google Analytics: change UA-XXXXX-X to be your site's ID.
+			 ========================================================================== 
+		<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+		</script>
+		-->
+	</body>
+</html>

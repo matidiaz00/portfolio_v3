@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Card
+   ========================================================================== */
+
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    width: 100%;
+    background-color: #fff;
+    .radius(2);
+}
+
+.imagen {
+    background-color: @main-color;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+}
+
+.imagen a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+}
+
+.imagen img {
+    max-width: 100%;
+    min-height: 150px;
+}
+
+.centerimage img {
+    max-width: calc(100% - 40px);;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imagen h2 {
+    color: #fff;
+    margin: 24px 16px 7px;
+}
+
+.imagen p {
+    color: #fff;
+    margin: 0 16px 25px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card .caracteristicas {
+    font-size: 13px;
+}
+
+.card .caracteristicas li {
+    margin: 5px 0;
+    color: #9c9c9c;
+}
+
+.card .caracteristicas li,
+.card .caracteristicas li a {
+    color: #9c9c9c;
+}
+
+.card .caracteristicas i.material-icons {
+    font-size: 18px;
+    vertical-align: bottom;
+    margin-right: 3px;
+}
+
+.card .textos {
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.card .body {
+    padding: 24px 16px 16px;
+}
+
+.card .body .titulo {
+    overflow: hidden;
+    height: 19px;
+    margin-bottom: 10px;
+}
+
+.add .btn {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

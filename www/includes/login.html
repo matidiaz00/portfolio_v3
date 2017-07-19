@@ -1,0 +1,35 @@
+<header>
+	<div class="container color">
+        <h1>Administración</h1>
+	</div>
+</header>
+
+<article>
+	<div class="container" style="max-width: 450px;">
+
+		<h2>Area de administración</h2>
+        <p>Complete el formulario para ingresar al area de administración y poder editar el sitio, si desea un usuario comuniquece mediante la pagina de contacto.</p>
+        <br>
+
+        <div class="alert alert-dismissible alert-success" ng-show="logued">
+			<p>Usted ya esta logueado, para salir <a href="" ng-click="signOut()"><strong>haga click aquí</strong></a>.</p>
+		</div>
+
+		<form ng-hide="logued" name="form" ng-submit="signIn()" novalidate>
+		    <div class="row">
+		        <div class="form-group col-xs-sm-12">
+		            <label class="control-label label-floating" for="email">Correo</label>
+		            <input class="form-control" type="email" name="email" id="email" ng-model="email">
+		        </div>
+		        <div class="form-group col-xs-sm-12">
+		            <label class="control-label label-floating" for="password">Contraseña</label>
+		            <input class="form-control" type="password" name="password" id="password" ng-model="experiencia.ancho">
+		        </div>
+		        <div class="form-group col-xs-sm-12">
+					<input type="submit" class="btn btn-raised btn-default" value="Entrar">
+				</div>
+		    </div>
+		</form>
+
+	</div>
+</article>

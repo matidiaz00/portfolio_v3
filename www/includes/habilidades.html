@@ -1,0 +1,87 @@
+<header>
+	<div class="container color">
+		<h1 ng-attr-contenteditable="{{logued}}" ng-model="itemHabilidades.titulo" strip-br="true"></h1>
+	</div>
+</header>
+
+<article>
+	<div class="container">
+		<h2>Introduccion</h2>
+		<div ng-attr-contenteditable="{{logued}}" ng-model="itemHabilidades.introduccion" strip-br="true"></div>
+		<br>
+
+
+		<div class="text-center" id="hab">
+
+            <div ng-repeat="cols in columnas">
+
+            	<img class="icon" ng-click="!logued || openIcon(cols)" ng-src="{{ cols.icono }}">
+
+            	<script type="text/ng-template" id="icon.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-title">Icono de {{ hab.titulo }}</h3>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                    	<img ng-src="{{ hab.icono }}"><br><br>
+                        <input type="text" ng-model="hab.icono">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                    </div>
+                </script>
+
+                <br>
+                <br>
+
+                <h3 ng-attr-contenteditable="{{logued}}" ng-model="cols.titulo" ng-change="columnas.$save(cols)" strip-br="true"></h3>
+
+                <p ng-repeat="colsHab in cols.categorias">
+                	{{ colsHab }}
+                </p>
+
+                <a href="" class="btn btn-raised btn-default" ng-show="logued" ng-click="open(cols)">Editar items</a>
+
+                <script type="text/ng-template" id="popup.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-title">Items de {{ hab.titulo }}</h3>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <p>Categorias: <a href="#/categorias" ng-click="close()">Editar</a></p>
+
+                        <form class="form row">
+                            <div class="col-xs-4" ng-repeat="categoria in itemCategoria">
+                                <div class="checkbox">
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="cat"
+                                            ng-true-value="'{{categoria.texto}}'"
+                                            ng-false-value="{}"
+                                            ng-model="hab.categorias[categoria.$id]">
+                                        <span class="checkbox-material">
+                                            <span class="check"></span>
+                                        </span>
+                                        {{ categoria.texto }}
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                    </div>
+                </script>
+
+            </div>
+
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <h2 ng-attr-contenteditable="{{logued}}" ng-model="itemHabilidades.informacion.titulo" strip-br="true"></h2>
+        <div ng-attr-contenteditable="{{logued}}" ng-model="itemHabilidades.informacion.texto" strip-br="true"></div>
+	</div>
+</article>

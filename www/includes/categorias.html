@@ -1,0 +1,39 @@
+<header>
+	<div class="container color">
+		<h1>Categorias</h1>
+	</div>
+</header>
+
+<article>
+	<div class="container">
+		<h2>Edita las categorias</h2>
+
+		<div class="list-group row">
+
+			<div class="list-group-item col-xs-4" ng-repeat="categoria in itemCategoria">
+				<div class="row-action-primary">
+					<a href="" ng-click="itemCategoria.$remove(categoria)">
+						<i class="material-icons">delete_forever</i>
+					</a>
+				</div>
+				<div class="row-content">
+					<h4 contenteditable="true" class="action-secondary" ng-model="categoria.porcentaje" ng-change="itemCategoria.$save(categoria)" strip-br="true"></h4>
+					<h4 contenteditable="true" class="list-group-item-heading" ng-model="categoria.texto" ng-change="itemCategoria.$save(categoria)" strip-br="true"></h4>
+				</div>
+			</div>
+		
+			<div class="list-group-item col-xs-4">
+				<div class="row-action-primary">
+					<a href="" ng-click="newCat()">
+						<i class="material-icons">add</i>
+					</a>
+				</div>
+				<div class="row-content">
+					<h4 ng-click="newCat()" class="list-group-item-heading">Añadir nuevo</h4>
+				</div>
+			</div>
+		
+		</div>
+
+	</div>
+</article>

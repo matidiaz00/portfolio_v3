@@ -1,0 +1,419 @@
+<header>
+	<div class="container color">
+		<h1 ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.titulo" strip-br="true"></h1>
+	</div>
+</header>
+
+<article>
+	<div class="container">
+
+		<div class="row">
+			<div class="col-xs-12" id="carousel-proyInterna">
+				<h2 ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.titulo" strip-br="true"></h2>
+				<div class="carousel color">
+
+					<style type="text/css">
+                        #proy-{{ $index + 1 }} {
+                        	/*background-position: {{ itemProyectosInterna.background.position }};
+                        	background-repeat: {{ itemProyectosInterna.background.repeat }};
+                            background-image: url({{ itemProyectosInterna.background.bg }});*/
+                            background: url({{ itemProyectosInterna.background.bg }}) {{ itemProyectosInterna.background.position }} {{ itemProyectosInterna.background.repeat }}, {{ itemProyectosInterna.background.firstcolor }};
+                            background: url({{ itemProyectosInterna.background.bg }}) {{ itemProyectosInterna.background.position }} {{ itemProyectosInterna.background.repeat }}, -moz-linear-gradient(-45deg, {{ itemProyectosInterna.background.firstcolor }} 0%, {{ itemProyectosInterna.background.secondcolor }} 50%, {{ itemProyectosInterna.background.thirdcolor }} 100%);
+                            background: url({{ itemProyectosInterna.background.bg }}) {{ itemProyectosInterna.background.position }} {{ itemProyectosInterna.background.repeat }}, -webkit-gradient(linear, left top, right bottom, color-stop(0%,{{ itemProyectosInterna.background.firstcolor }}), color-stop(50%,{{ itemProyectosInterna.background.secondcolor }}), color-stop(100%,{{ itemProyectosInterna.background.thirdcolor }}));
+                            background: url({{ itemProyectosInterna.background.bg }}) {{ itemProyectosInterna.background.position }} {{ itemProyectosInterna.background.repeat }}, -webkit-linear-gradient(-45deg, {{ itemProyectosInterna.background.firstcolor }} 0%,{{ itemProyectosInterna.background.secondcolor }} 50%,{{ itemProyectosInterna.background.thirdcolor }} 100%);
+                            background: url({{ itemProyectosInterna.background.bg }}) {{ itemProyectosInterna.background.position }} {{ itemProyectosInterna.background.repeat }}, -o-linear-gradient(-45deg, {{ itemProyectosInterna.background.firstcolor }} 0%,{{ itemProyectosInterna.background.secondcolor }} 50%,{{ itemProyectosInterna.background.thirdcolor }} 100%);
+                            background: url({{ itemProyectosInterna.background.bg }}) {{ itemProyectosInterna.background.position }} {{ itemProyectosInterna.background.repeat }}, -ms-linear-gradient(-45deg, {{ itemProyectosInterna.background.firstcolor }} 0%,{{ itemProyectosInterna.background.secondcolor }} 50%,{{ itemProyectosInterna.background.thirdcolor }} 100%);
+                            background: url({{ itemProyectosInterna.background.bg }}) {{ itemProyectosInterna.background.position }} {{ itemProyectosInterna.background.repeat }}, linear-gradient(135deg, {{ itemProyectosInterna.background.firstcolor }} 0%,{{ itemProyectosInterna.background.secondcolor }} 50%,{{ itemProyectosInterna.background.thirdcolor }} 100%);
+                            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ itemProyectosInterna.background.firstcolor }}', endColorstr='{{ itemProyectosInterna.background.thirdcolor }}',GradientType=1 );
+                        }
+                    </style>
+
+					<ul rn-carousel rn-carousel-controls rn-carousel-buffered rn-carousel-controls-allow-loop ng-if="itemProyectosInternaCarousel" ng-class="{ 'logued': logued }" class="image" id="proy-{{ $index + 1 }}">
+						<li ng-repeat="InternalCarousel in itemProyectosInternaCarousel">
+							<!--<img ng-src="{{InternalCarousel.$value}}">-->
+
+							<style type="text/css">
+								#image_proy_carousel_{{ $index + 1 }} {
+									background-image: url({{ InternalCarousel.imagen_mobile }});
+									background-position: {{ InternalCarousel.background.position }};
+									background-size: 100% 100%;
+								}
+								@media (min-width: 768px) {
+									#image_proy_carousel_{{ $index + 1 }} {
+										background-image: url({{ InternalCarousel.imagen_desktop }});
+										background-size: {{ InternalCarousel.background.size }};
+									}
+								}
+							</style>
+
+							<div class="image_carousel" id="image_proy_carousel_{{ $index + 1 }}"></div>
+
+							<span ng-show="logued" class="image_edit">
+								<a href="" ng-click="open(InternalCarousel)">
+									<i class="material-icons">camera_alt</i>
+								</a>
+							</span>
+
+							<script type="text/ng-template" id="popup.html">
+				                <div class="modal-header">
+				                    <h3 class="modal-title" id="modal-title">Carrousel numero {{ slide.$id }}</h3>
+				                </div>
+				                <div class="modal-body" id="modal-body">
+									<form>
+		                                <div class="row">
+		                                	<div class="form-group col-xs-sm-12 col-xs-md-6">
+		                                		<div class="form-image">
+		                                			<img ng-src="{{ slide.imagen_desktop }}">
+		                                		</div>
+							                    <label class="control-label label-floating" for="slideDesktop">Imagen desktop</label>
+												<input class="form-control" type="text" id="slideDesktop"  ng-model="slide.imagen_desktop" />
+											</div>
+											<div class="form-group col-xs-sm-12 col-xs-md-6">
+												<div class="form-image">
+		                                			<img ng-src="{{ slide.imagen_mobile }}">
+		                                		</div>
+												<label class="control-label label-floating" for="slideMobile">Imagen mobile</label>
+												<input class="form-control" type="text" id="slideMobile"  ng-model="slide.imagen_mobile" />
+											</div>
+		                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+		                                        <label class="control-label label-floating" for="slidePosition">Posicion del fondo</label>
+		                                        <input class="form-control" type="text" id="slidePosition" ng-model="slide.background.position">
+		                                    </div>
+		                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+		                                        <label class="control-label label-floating" for="slideSize">Tamaño del fondo</label>
+		                                        <input class="form-control" type="text" id="slideSize" ng-model="slide.background.size">
+		                                    </div>
+		                                </div>
+		                            </form>
+				                </div>
+				                <div class="modal-footer">
+				                    <button class="btn btn-raised btn-warning" type="button" ng-click="remove()">Eliminar</button>
+				                    <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+				                </div>
+				            </script>
+						</li>
+					</ul>
+					<div class="color_slide" ng-show="logued">
+						<span class="btn-group-sm">
+							<a href="" ng-click="openBg()" class="btn btn-default btn-fab">
+								<i class="material-icons">color_lens</i>
+							</a>
+						</span>
+						<!--Color <div style="display: inline;" contenteditable="true" ng-model="itemProyectosInterna.color" placeholder="emty" strip-br="true"></div>-->
+					</div>
+					<div class="add_slide" ng-show="logued">
+						Cantidad {{itemProyectosInternaCarousel.length}}
+						<span class="btn-group-sm">
+							<a href="" ng-click="newIntCar()" class="btn btn-default btn-fab">
+								<i class="material-icons">add</i>
+							</a>
+						</span>
+					</div>
+
+					<script type="text/ng-template" id="popupBg.html">
+		                <div class="modal-header">
+		                    <h3 class="modal-title" id="modal-title">Fondo</h3>
+		                </div>
+		                <div class="modal-body" id="modal-body">
+		                	<form>
+		                		<p>Edita las opciones para cambiar el fondo del carousel</p>
+                                <div class="row">
+                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                        <label class="control-label label-floating" for="firstcolor">Primer color de fondo</label>
+                                        <input class="form-control" type="text" id="firstcolor" ng-model="item.background.firstcolor">
+                                    </div>
+                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                        <label class="control-label label-floating" for="secondcolor">Segundo color de fondo</label>
+                                        <input class="form-control" type="text" id="secondcolor" ng-model="item.background.secondcolor">
+                                    </div>
+                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                        <label class="control-label label-floating" for="thirdcolor">Tercer color de fondo</label>
+                                        <input class="form-control" type="text" id="thirdcolor" ng-model="item.background.thirdcolor">
+                                    </div>
+                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                        <label class="control-label label-floating" for="bg">Imagen de fondo</label>
+                                        <input class="form-control" type="text" id="bg" ng-model="item.background.bg">
+                                    </div>
+                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                        <label class="control-label label-floating" for="bgposition">Posicion de la imagen de fondo</label>
+                                        <input class="form-control" type="text" id="bgposition" ng-model="item.background.position">
+                                    </div>
+                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                        <label class="control-label label-floating" for="bgrepeat">Repetir la imagen de fondo</label>
+                                        <input class="form-control" type="text" id="bgrepeat" ng-model="item.background.repeat">
+                                    </div>
+                                </div>
+                            </form>
+		                </div>
+		                <div class="modal-footer">
+		                    <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+		                </div>
+		            </script>
+
+				</div>
+				<!--
+				<hr>
+				<ul>
+					<li ng-repeat="InternalCarousel in itemProyectosInternaCarousel">
+						URL Imagen {{ $index + 1 }}: <input type="file" ng-model="InternalCarousel.$value"/>
+						<a href="" ng-click="itemProyectosInternaCarousel.$remove(InternalCarousel)" >X</a>
+					</li>
+					<li>
+						<a href="" ng-click="newIntCar()">Añadir nuevo</a>
+					</li>
+				</ul>
+				-->
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-lg-5 col-xs-12">
+				<span></span>
+				<h3>Proyecto</h3>
+				<p ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.informacion" strip-br="true"></p>
+
+				<hr>
+
+				<div class="list-group row">
+					<!--
+					<div class="col-xs-6">
+						<h3>Año</h3>
+						<p ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.fecha" strip-br="true"></p>
+					</div>
+					<div class="col-xs-6">
+						<h3>Sitio</h3>
+						<a ng-click="openLink()" href="" target="_blank">{{ itemProyectosInterna.link.texto }}</a>
+						<script type="text/ng-template" id="popupLink.html">
+		                    <div class="modal-header">
+		                        <h3 class="modal-title" id="modal-title">Sitio de "{{ item.titulo }}"</h3>
+		                    </div>
+		                    <div class="modal-body" id="modal-body">
+		                        <p>URL: <input type="text" ng-model="item.link.url"/><br>
+								Texto: <input type="text" ng-model="item.link.texto"/></p>
+		                    </div>
+		                    <div class="modal-footer">
+		                        <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+		                    </div>
+		                </script>
+					</div>
+					-->
+
+					<div class="list-group-item col-xs-12 col-xs-md-6 col-lg-5">
+						<div class="row-action-primary">
+							<i class="material-icons">event_note</i>
+						</div>
+						<div class="row-content">
+							<h4 class="list-group-item-heading" ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.fecha" strip-br="true"></h4>
+						</div>
+					</div>
+
+					<div class="list-group-item col-xs-12 col-xs-md-6 col-lg-7">
+						<div class="row-action-primary">
+							<a ng-click="openLink()" href="" target="_blank">
+								<i class="material-icons">link</i>
+							</a>
+						</div>
+						<div class="row-content">
+							<h4 class="list-group-item-heading"><a ng-click="openLink()" href="" target="_blank">{{ itemProyectosInterna.link.texto }}</a></h4>
+						</div>
+					</div>
+
+					<script type="text/ng-template" id="popupLink.html">
+	                    <div class="modal-header">
+	                        <h3 class="modal-title" id="modal-title">Sitio de "{{ item.titulo }}"</h3>
+	                    </div>
+	                    <div class="modal-body" id="modal-body">
+	                        <p>URL: <input type="text" ng-model="item.link.url"/><br>
+							Texto: <input type="text" ng-model="item.link.texto"/></p>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+	                    </div>
+	                </script>
+					
+				</div>
+
+			</div>
+
+			<div class="col-xs-12 col-xs-md-6 col-lg-3" id="tecnologias">
+				<span></span>
+				<h3>Tecnologías</h3>
+				<!--
+				<div class="row">
+					<div class="col-xs-6" ng-repeat="categoria in itemProyectosInterna.categorias">
+						<span class="label label-success">{{categoria}}</span>
+					</div>
+				</div>
+				-->
+				<ul class="list-unstyled proyTec">
+					<li ng-repeat="categoria in itemProyectosInterna.categorias">
+						<i class="material-icons pull-left">local_offer</i>
+						<strong>{{categoria}}</strong>
+					</li>
+				</ul>
+				<!--
+				<ul>
+					<li ng-repeat="categoria in itemProyectosInterna.categorias">
+						{{categoria}}
+					</li>
+				</ul>
+				-->
+				<button class="btn btn-raised btn-default text-center" type="button" ng-click="openTec()" ng-show="logued">Editar Tecnologías</button>
+				<script type="text/ng-template" id="popupTec.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-title">Tecnologias usadas en "{{ item.titulo }}"</h3>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <form class="form row">
+                            <div class="col-xs-4" ng-repeat="categoria in itemCategoria">
+                                <div class="checkbox">
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="cat"
+                                            ng-true-value="'{{categoria.texto}}'"
+                                            ng-false-value="{}"
+                                            ng-model="item.categorias[categoria.$id]">
+                                        <span class="checkbox-material">
+                                            <span class="check"></span>
+                                        </span>
+                                        {{ categoria.texto }}
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    	<a class="btn btn-raised btn-default" ng-click="close()" href="#/categorias">Editar categorias</a>
+                        <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                    </div>
+                </script>
+				<!--
+				<ul>
+					<li ng-repeat="categoria in itemProyectosInterna.categorias">
+						{{categoria}}
+					</li>
+				</ul>
+				<hr>
+				<ul>
+					<li ng-repeat="categoria in itemCategoria">
+						<label>
+							<input
+								type="checkbox"
+								name="cat"
+								ng-true-value="'{{categoria.texto}}'"
+								ng-false-value="{}"
+								ng-model="itemProyectosInterna.categorias[categoria.$id]">
+							{{ categoria.texto }}
+						</label>
+					</li>
+				</ul>
+				-->
+			</div>
+
+			<div class="col-xs-12 col-xs-md-6 col-lg-4">
+				<span></span>
+				<h3>Cross-browser</h3>
+				<div class="row text-center cross-browser">
+
+					<div class="col-xs-6 col-xs-sm-4 col-xs-md-6 col-xs-lg-4 col-md-3">
+						<div class="circle">
+							<img src="https://firebasestorage.googleapis.com/v0/b/matidiaz-f3c64.appspot.com/o/browsers%2Fandroid.svg?alt=media&token=72144169-4bf1-4c1c-9d31-f37e06d6b87a">
+						</div>
+						<div class="text">
+							v<span ng-attr-contenteditable="{{logued}}" placeholder="???" ng-model="itemProyectosInterna.cross.android" strip-br="true"></span> en<br>
+							adelante
+						</div>
+					</div>
+
+					<div class="col-xs-6 col-xs-sm-4 col-xs-md-6 col-xs-lg-4 col-md-3">
+						<div class="circle">
+							<img src="https://firebasestorage.googleapis.com/v0/b/matidiaz-f3c64.appspot.com/o/browsers%2Fchrom2.svg?alt=media&token=a7039d44-2f8b-4ab1-851d-fea659f9fee5">
+						</div>
+						<div class="text">
+							v<span ng-attr-contenteditable="{{logued}}" placeholder="???" ng-model="itemProyectosInterna.cross.chrome" strip-br="true"></span> en<br>
+							adelante
+						</div>
+					</div>
+
+					<div class="col-xs-6 col-xs-sm-4 col-xs-md-6 col-xs-lg-4 col-md-3">
+						<div class="circle">
+							<img src="https://firebasestorage.googleapis.com/v0/b/matidiaz-f3c64.appspot.com/o/browsers%2Fedge.svg?alt=media&token=0c08f042-d7fd-4dc7-bb21-5016a1cf278d">
+						</div>
+						<div class="text">
+							v<span ng-attr-contenteditable="{{logued}}" placeholder="???" ng-model="itemProyectosInterna.cross.edge" strip-br="true"></span> en<br>
+							adelante
+						</div>
+					</div>
+
+					<div class="col-xs-6 col-xs-sm-4 col-xs-md-6 col-xs-lg-4 col-md-3">
+						<div class="circle">
+							<img src="https://firebasestorage.googleapis.com/v0/b/matidiaz-f3c64.appspot.com/o/browsers%2Fexplorer.svg?alt=media&token=3200ec3b-a92c-4125-93a3-440b4e0a57a1">
+						</div>
+						<div class="text">
+							v<span ng-attr-contenteditable="{{logued}}" placeholder="???" ng-model="itemProyectosInterna.cross.explorer" strip-br="true"></span> en<br>
+							adelante
+						</div>
+					</div>
+
+					<div class="col-xs-6 col-xs-sm-4 col-xs-md-6 col-xs-lg-4 col-md-3">
+						<div class="circle">
+							<img src="https://firebasestorage.googleapis.com/v0/b/matidiaz-f3c64.appspot.com/o/browsers%2Ffirefox.svg?alt=media&token=bd08ebe2-3bdf-4182-8400-f9e04b69ec87">
+						</div>
+						<div class="text">
+							v<span ng-attr-contenteditable="{{logued}}" placeholder="???" ng-model="itemProyectosInterna.cross.firefox" strip-br="true"></span> en<br>
+							adelante
+						</div>
+					</div>
+
+					<div class="col-xs-6 col-xs-sm-4 col-xs-md-6 col-xs-lg-4 col-md-3">
+						<div class="circle">
+							<img src="https://firebasestorage.googleapis.com/v0/b/matidiaz-f3c64.appspot.com/o/browsers%2Fios.svg?alt=media&token=28272678-ac82-42df-8232-09f9335e9792">
+						</div>
+						<div class="text">
+							v<span ng-attr-contenteditable="{{logued}}" placeholder="???" ng-model="itemProyectosInterna.cross.ios" strip-br="true"></span> en<br>
+							adelante
+						</div>
+					</div>
+
+					<div class="col-xs-6 col-xs-sm-4 col-xs-md-6 col-xs-lg-4 col-md-3">
+						<div class="circle">
+							<img src="https://firebasestorage.googleapis.com/v0/b/matidiaz-f3c64.appspot.com/o/browsers%2Fsafari.svg?alt=media&token=f2d51052-69b3-4166-9692-817e9681ef15">
+						</div>
+						<div class="text">
+							v<span ng-attr-contenteditable="{{logued}}" placeholder="???" ng-model="itemProyectosInterna.cross.safari" strip-br="true"></span> en<br>
+							adelante
+						</div>
+					</div>
+
+					<div class="col-xs-6 col-xs-sm-4 col-xs-md-6 col-xs-lg-4 col-md-3">
+						<div class="circle">
+							<img src="https://firebasestorage.googleapis.com/v0/b/matidiaz-f3c64.appspot.com/o/browsers%2Fwindows.svg?alt=media&token=819fb673-f894-471f-a1ab-ed91795ac289">
+						</div>
+						<div class="text">
+							v<span ng-attr-contenteditable="{{logued}}" placeholder="???" ng-model="itemProyectosInterna.cross.windowsp" strip-br="true"></span> en<br>
+							adelante
+						</div>
+					</div>
+
+				</div>
+				<!--
+				<ul>
+					<li>Android - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.android" strip-br="true"></span> en adelante</li>
+					<li>IOS - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.ios" strip-br="true"></span> en adelante</li>
+					<li>Windows Phone - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.windowsp" strip-br="true"></span> en adelante</li>
+					<li>Edge - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.edge" strip-br="true"></span> en adelante</li>
+					<li>Explorer - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.explorer" strip-br="true"></span> en adelante</li>
+					<li>Firefox - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.firefox" strip-br="true"></span> en adelante</li>
+					<li>Chrome - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.chrome" strip-br="true"></span> en adelante</li>
+					<li>Opera - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.opera" strip-br="true"></span> en adelante</li>
+					<li>Safari - v<span ng-attr-contenteditable="{{logued}}" ng-model="itemProyectosInterna.cross.safari" strip-br="true"></span> en adelante</li>
+				</ul>
+				-->
+			</div>
+
+		</div>
+
+	</div>
+</article>

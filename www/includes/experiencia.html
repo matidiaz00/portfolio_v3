@@ -1,0 +1,218 @@
+<header>
+	<div class="container color">
+        <h1 ng-attr-contenteditable="{{logued}}" ng-model="itemExperiencia.titulo" strip-br="true"></h1>
+	</div>
+</header>
+
+<article>
+	<div class="container">
+		<h2>Introduccion</h2>
+        <div ng-attr-contenteditable="{{logued}}" ng-model="itemExperiencia.introduccion" strip-br="true"></div>
+        <br>
+
+        <div class="row" id="carousel-exp">
+            <ul class="image" ng-if="itemExperiencias" rn-carousel rn-carousel-deep-watch rn-carousel-controls>
+                <li ng-repeat="exp in itemExperiencias | orderBy:'id':true">
+                    <div>
+                        <div class="card text-center">
+
+                            <style type="text/css">
+                                #exp-{{ $index + 1 }} {
+                                    background-image: url({{ exp.bg }});
+                                    background: {{ exp.firstcolor }};
+                                    background: -moz-linear-gradient(-45deg, {{ exp.firstcolor }} 0%, {{ exp.secondcolor }} 50%, {{ exp.thirdcolor }} 100%);
+                                    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,{{ exp.firstcolor }}), color-stop(50%,{{ exp.secondcolor }}), color-stop(100%,{{ exp.thirdcolor }}));
+                                    background: -webkit-linear-gradient(-45deg, {{ exp.firstcolor }} 0%,{{ exp.secondcolor }} 50%,{{ exp.thirdcolor }} 100%);
+                                    background: -o-linear-gradient(-45deg, {{ exp.firstcolor }} 0%,{{ exp.secondcolor }} 50%,{{ exp.thirdcolor }} 100%);
+                                    background: -ms-linear-gradient(-45deg, {{ exp.firstcolor }} 0%,{{ exp.secondcolor }} 50%,{{ exp.thirdcolor }} 100%);
+                                    background: linear-gradient(135deg, {{ exp.firstcolor }} 0%,{{ exp.secondcolor }} 50%,{{ exp.thirdcolor }} 100%);
+                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ exp.firstcolor }}', endColorstr='{{ exp.thirdcolor }}',GradientType=1 );
+                                }
+                            </style>
+                            
+                            <div class="imagen centerimage" id="exp-{{ $index + 1 }}">
+                                <a href="{{ exp.link.url }}" target="_blank"><img ng-src="{{ exp.imagen }}" width="{{ exp.ancho }}"></a>
+                            </div>
+
+                            <div class="body">
+                                <div class="titulo">
+                                    <h4>{{ exp.titulo }}</h4>
+                                </div>
+
+                                <div class="caracteristicas">
+                                    <ul class="list-unstyled">
+                                        <li><i class="material-icons">work</i> {{ exp.puesto }}</li>
+                                        <li><a href="{{ exp.link.url }}" target="_blank"><i class="material-icons">link</i> {{ exp.link.texto }}</a></li>
+                                        <li><i class="material-icons">event_note</i> {{ exp.fecha }}</li>
+                                    </ul>
+                                </div>
+
+                                <hr>
+
+                                <div class="textos">
+                                    <div ng-bind-html="exp.mis_tareas"></div>
+                                </div>
+
+
+
+
+                                <a href="" class="btn btn-raised btn-default" ng-click="open(exp)">Más info</a>
+                                <a ng-show="logued == true" href="" class="btn btn-raised btn-danger" ng-click="itemExperiencias.$remove(exp)">Eliminar</a>
+
+                                <script type="text/ng-template" id="popup.html">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title" contenteditable ng-model="experiencia.titulo" strip-br="true"></h3>
+                                    </div>
+                                    <div class="modal-body" id="modal-body">
+
+                                        <style type="text/css">
+                                            #exp-popup-{{ $index + 1 }} {
+                                                background-image: url({{ experiencia.bg }});
+                                                background: {{ experiencia.firstcolor }};
+                                                background: -moz-linear-gradient(-45deg, {{ experiencia.firstcolor }} 0%, {{ experiencia.secondcolor }} 50%, {{ experiencia.thirdcolor }} 100%);
+                                                background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,{{ experiencia.firstcolor }}), color-stop(50%,{{ experiencia.secondcolor }}), color-stop(100%,{{ experiencia.thirdcolor }}));
+                                                background: -webkit-linear-gradient(-45deg, {{ experiencia.firstcolor }} 0%,{{ experiencia.secondcolor }} 50%,{{ experiencia.thirdcolor }} 100%);
+                                                background: -o-linear-gradient(-45deg, {{ experiencia.firstcolor }} 0%,{{ experiencia.secondcolor }} 50%,{{ experiencia.thirdcolor }} 100%);
+                                                background: -ms-linear-gradient(-45deg, {{ experiencia.firstcolor }} 0%,{{ experiencia.secondcolor }} 50%,{{ experiencia.thirdcolor }} 100%);
+                                                background: linear-gradient(135deg, {{ experiencia.firstcolor }} 0%,{{ experiencia.secondcolor }} 50%,{{ experiencia.thirdcolor }} 100%);
+                                                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ experiencia.firstcolor }}', endColorstr='{{ experiencia.thirdcolor }}',GradientType=1 );
+                                            }
+                                        </style>
+                                        <div class="imagen" id="exp-popup-{{ $index + 1 }}">
+                                            <div class="centerimage">
+                                                <a href="{{ experiencia.link.url }}" target="_blank">
+                                                    <img ng-src="{{ experiencia.imagen }}" width="{{ experiencia.ancho }}">
+                                                </a>
+                                            </div>
+                                            <form ng-show="logued">
+                                                <div class="row">
+                                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                                        <label class="control-label label-floating" for="imagen">URL de la imagen</label>
+                                                        <input class="form-control" type="text" id="imagen" ng-model="experiencia.imagen">
+                                                    </div>
+                                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                                        <label class="control-label label-floating" for="ancho">Ancho de la imagen</label>
+                                                        <input class="form-control" type="text" id="ancho" ng-model="experiencia.ancho">
+                                                    </div>
+                                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                                        <label class="control-label label-floating" for="firstcolor">Primer color de fondo</label>
+                                                        <input class="form-control" type="text" id="firstcolor" ng-model="experiencia.firstcolor">
+                                                    </div>
+                                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                                        <label class="control-label label-floating" for="secondcolor">Segundo color de fondo</label>
+                                                        <input class="form-control" type="text" id="secondcolor" ng-model="experiencia.secondcolor">
+                                                    </div>
+                                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                                        <label class="control-label label-floating" for="thirdcolor">Tercer color de fondo</label>
+                                                        <input class="form-control" type="text" id="thirdcolor" ng-model="experiencia.thirdcolor">
+                                                    </div>
+                                                    <div class="form-group col-xs-sm-12 col-xs-md-6">
+                                                        <label class="control-label label-floating" for="bg">Imagen de fondo</label>
+                                                        <input class="form-control" type="text" id="bg" ng-model="experiencia.bg">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="row" id="info-exp">
+                                            <div class="col-xs-sm-12 col-xs-md-6">
+                                                <h4>Info</h4>
+                                                <ul class="list-unstyled proyTec">
+                                                    <li>
+                                                        <i class="material-icons pull-left">work</i>
+                                                        <strong ng-attr-contenteditable="{{logued}}" ng-model="experiencia.puesto" strip-br="true"></strong>
+                                                    </li>
+                                                    <li>
+                                                        <i class="material-icons pull-left">local_offer</i>
+                                                        <strong ng-attr-contenteditable="{{logued}}" ng-model="experiencia.cargo" strip-br="true"></strong>
+                                                    </li>
+                                                    <li>
+                                                        <i class="material-icons pull-left">link</i>
+                                                        <strong>
+                                                            <a ng-href="{{ logued ? '' : experiencia.link.url }}" target="_blank" ng-click="!logued || openLink(experiencia)">{{ experiencia.link.texto }}</a>
+                                                        </strong>
+                                                    </li>
+                                                    <li>
+                                                        <i class="material-icons pull-left">event_note</i>
+                                                        <strong ng-attr-contenteditable="{{logued}}" ng-model="experiencia.fecha" strip-br="true"></strong>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-xs-sm-12 col-xs-md-6">
+                                                <h4>Empresa</h4>
+                                                <div ng-attr-contenteditable="{{logued}}" ng-model="experiencia.informacion_empresa" strip-br="true"></div>
+                                                <br>
+                                                <h4>Mis tareas</h4>
+                                                <div ng-attr-contenteditable="{{logued}}" ng-model="experiencia.mis_tareas" strip-br="true"></div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <h4>Tecnologías utilizadas en proyectos:</h4>
+                                            
+                                            <div class="row">
+                                                <div class="col-xs-sm-12 col-xs-md-6 col-xs-lg-4" ng-repeat="tec in experiencia.categorias">
+                                                    <strong>{{ tec }}</strong>
+                                                </div>
+                                            </div>
+                                            <div ng-show="logued">
+                                                <hr>
+                                                <h4>Categorias: <small><a href="#/categorias" ng-click="close()">Editar</a></small></h4>
+                                                <form class="form row">
+                                                    <div class="col-xs-sm-12 col-xs-md-6 col-xs-lg-4" ng-repeat="categoria in itemCategoria">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input
+                                                                    type="checkbox"
+                                                                    name="cat"
+                                                                    ng-true-value="'{{categoria.texto}}'"
+                                                                    ng-false-value="{}"
+                                                                    ng-model="experiencia.categorias[categoria.$id]">
+                                                                <span class="checkbox-material">
+                                                                    <span class="check"></span>
+                                                                </span>
+                                                                {{ categoria.texto }}
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-raised btn-danger" type="button" ng-click="experiencia.$remove">Eliminar</button>
+                                        <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                                    </div>
+                                </script>
+
+                                <script type="text/ng-template" id="popupLink.html">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Edita el link</h3>
+                                    </div>
+                                    <div class="modal-body" id="modal-body">
+                                        URL del link:<br>
+                                        <input type="text" placeholder="Link (URL)" ng-model="experiencia.link.url"/><br><br>
+                                        Texto del link:<br>
+                                        <input type="text" placeholder="Link (Texto)" ng-model="experiencia.link.texto"/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                                    </div>
+                                </script>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                <li ng-show="logued == true" class="add text-center">
+                    <a href="" class="btn btn-default btn-fab" ng-click="newExp()">
+                        <i class="material-icons">add</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+	</div>
+</article>

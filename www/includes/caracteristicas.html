@@ -1,0 +1,34 @@
+<header>
+	<div class="container color">
+		<h1>Caracteristicas de los curriculum</h1>
+	</div>
+</header>
+
+<article>
+	<div class="container">
+		<h2>Edita las caracteristicas de los curriculum</h2>
+
+		<div class="list-group row">
+
+			<div class="list-group-item col-xs-4" ng-repeat="caracteristicas in itemCaracteristicas">
+				<div class="row-action-primary" ng-click="itemCaracteristicas.$remove(caracteristicas)">
+					<i class="material-icons">delete_forever</i>
+				</div>
+				<div class="row-content">
+					<h4 contenteditable="true" class="list-group-item-heading" ng-model="caracteristicas.texto" ng-change="itemCaracteristicas.$save(caracteristicas)" strip-br="true"></h4>
+				</div>
+			</div>
+		
+			<div class="list-group-item col-xs-4">
+				<div ng-click="newCar()" class="row-action-primary">
+					<i class="material-icons">add</i>
+				</div>
+				<div class="row-content">
+					<h4 ng-click="newCar()" class="list-group-item-heading">Añadir nuevo</h4>
+				</div>
+			</div>
+		
+		</div>
+
+	</div>
+</article>

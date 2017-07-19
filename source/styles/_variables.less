@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+@main-color: rgba(43, 175, 97, 1);
+@main-color-hover: rgba(43, 175, 97, 0.8);
+
+@secondary-color: #333333;
+
+@bg-color: #f8f8f8;
+
+@bold-color: rgba(45, 80, 54, 1);
+@bold-color-hover: rgba(45, 80, 54, 0.8);
+
+@red-color: rgba(244, 67, 54, 1);
+@red-color-hover: rgba(244, 67, 54, 0.8);
+
+.gradient(main) {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2baf61+0,bad374+100 */
+	background: rgb(43,175,97); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(43,175,97,1) 0%, rgba(186,211,116,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  rgba(43,175,97,1) 0%,rgba(186,211,116,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  rgba(43,175,97,1) 0%,rgba(186,211,116,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2baf61', endColorstr='#bad374',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.transition(opacity) {
+	-webkit-transition: opacity 200ms;
+	-moz-transition: opacity 200ms;
+	-o-transition: opacity 200ms;
+	transition: opacity 200ms;
+}
+
+.transition(opacity1s) {
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
+}
+
+.transition(opacity1-5s) {
+	-webkit-transition: opacity 1.5s;
+	-moz-transition: opacity 1.5s;
+	-o-transition: opacity 1.5s;
+	transition: opacity 1.5s;
+}
+
+.transition(background-color) {
+	-webkit-transition: background-color 200ms;
+	-moz-transition: background-color 200ms;
+	-o-transition: background-color 200ms;
+	transition: background-color 200ms;
+}
+
+.transition(color) {
+	-webkit-transition: color 200ms;
+	-moz-transition: color 200ms;
+	-o-transition: color 200ms;
+	transition: color 200ms;
+}
+
+.transition(right) {
+	-webkit-transition: right 200ms;
+	-moz-transition: right 200ms;
+	-o-transition: right 200ms;
+	transition: right 200ms;
+}
+
+.transition(all) {
+	-webkit-transition: all 200ms;
+	-moz-transition: all 200ms;
+	-o-transition: all 200ms;
+	transition: all 200ms;
+}
+
+.transition(all4s) {
+	-webkit-transition: all 400ms;
+	-moz-transition: all 400ms;
+	-o-transition: all 400ms;
+	transition: all 400ms;
+}
+
+@Montserrat: 'Montserrat', Helvetica, arial, sans-serif;
+
+.radius(2) {
+	-webkit-border-radius: 2px; 
+	-moz-border-radius: 2px; 
+	border-radius: 2px; 
+}
+
+.radius(50%) {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+@mobile-nav:	 	~"(max-width: 991px)";
+
+@smartphone-ms: 	~"(min-width: 340px)";
+@smartphone-md: 	~"(min-width: 490px)";
+@smartphone-lg: 	~"(min-width: 640px)";
+@tablet: 			~"(min-width: 768px)";
+@desktop: 			~"(min-width: 992px)";
+@desktop-lg: 		~"(min-width: 1200px)";

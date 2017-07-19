@@ -1,0 +1,150 @@
+<header>
+	<div class="container color">
+        <h1 ng-attr-contenteditable="{{logued}}" ng-model="itemContacto.titulo" strip-br="true"></h1>
+	</div>
+</header>
+
+<article>
+	<div class="container">
+		<h2>Introduccion</h2>
+        <div ng-attr-contenteditable="{{logued}}" ng-model="itemContacto.introduccion" strip-br="true"></div>
+        <br>
+        <br>
+
+		<div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="row">
+                    <div class="col-xs-ms-12 col-xs-lg-7 col-lg-12">
+                        <h2>Contacto directo</h2>
+                        <div class="list-group row">
+                            <div class="list-group-item col-xs-12">
+                                <div class="row-action-primary">
+                                    <a href="mailto:{{ itemContacto.correo }}" target="_blank">
+                                        <i class="material-icons">email</i>
+                                    </a>
+                                </div>
+                                <div class="row-content">
+                                    <h4 class="list-group-item-heading"><a href="mailto:{{ itemContacto.correo }}" target="_blank"><span class="hidden-xs">{{ itemContacto.correo }}</span> <span class="visible-xs-block">Email</span></a></h4>
+                                </div>
+                            </div>
+                            <div class="list-group-item col-xs-12">
+                                <div class="row-action-primary">
+                                    <i class="material-icons">smartphone</i>
+                                </div>
+                                <div class="row-content">
+                                    <h4 class="list-group-item-heading" ng-attr-contenteditable="{{logued}}" ng-model="itemContacto.celular" strip-br="true"></h4>
+                                </div>
+                            </div>
+                            <div class="list-group-item col-xs-12">
+                                <div class="row-action-primary">
+                                    <i class="material-icons">video_call</i>
+                                </div>
+                                <div class="row-content">
+                                    <h4 class="list-group-item-heading" ng-attr-contenteditable="{{logued}}" ng-model="itemContacto.skype" strip-br="true"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        <p>
+                            <strong>Correo: </strong>
+                            <a href="mailto:{{ itemContacto.correo }}">{{ itemContacto.correo }}</a>
+                        </p>
+                        <p>
+                            <strong>Celular: </strong> 
+                            <span ng-attr-contenteditable="{{logued}}" ng-model="itemContacto.celular" strip-br="true"></span>
+                        </p>
+                        <p>
+                            <strong>Skype: </strong> 
+                            <span ng-attr-contenteditable="{{logued}}" ng-model="itemContacto.skype" strip-br="true"></span>
+                        </p>
+                        <br>
+                        -->
+                    </div>
+
+                    <div class="col-xs-ms-12 col-xs-lg-5 col-lg-12">
+                        <h2>Redes sociales</h2>
+                        <div class="social_icons row">
+
+                            <div ng-repeat="red_social in itemRedesSociales">
+                                <!--
+                                <a ng-hide="logued" target="_blank" href="{{ red_social.url }}">
+                                    <span class="social-icon" id="{{ red_social.id }}">-</span>
+                                </a>
+                                <a href="" ng-show="logued" ng-click="open(red_social)">
+                                    <span>{{ red_social.texto }}</span>
+                                </a>
+                                -->
+                                <a ng-href="{{ logued ? '' : red_social.url }}" target="{{ logued ? '' : '_blank' }}" class="btn btn-default btn-fab" ng-click="!logued || open(red_social)">
+                                    <span ng-bind-html="red_social.icono | toTrusted"></span>
+                                </a>
+                                <script type="text/ng-template" id="popup.html">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title" id="modal-title">{{ red.texto }}</h3>
+                                    </div>
+                                    <div class="modal-body" id="modal-body">
+                                        Icono: <br>
+                                        <input type="text" placeholder="Codigo del SVG" ng-model="red.icono"/> <br><br>
+                                        ID: <br>
+                                        <input type="text" placeholder="ID para luego dar estilos con CSS" ng-model="red.id"/> <br><br>
+                                        Texto: <br>
+                                        <input type="text" placeholder="Nombre de la red social" ng-model="red.texto"/> <br><br>
+                                        URL: <br>
+                                        <input type="text" placeholder="URL" ng-model="red.url"/> <br><br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-raised btn-warning" type="button" ng-click="remove()">Eliminar</button>
+                                        <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+                                    </div>
+                                </script>
+                            </div>
+                            <div ng-show="logued">
+                                <!--
+                                <a href="" ng-click="newRedSocial()">
+                                    <span>Nuevo</span>
+                                </a>
+                                -->
+                                <a href="" class="btn btn-default btn-fab" ng-click="newRedSocial()">
+                                    <i class="material-icons">add</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12" id="contactform">
+                <h2>Formulario de contacto</h2>
+                <p>El boton de "enviar" se activará solo cuando los datos de todas las casillas esten correctos y no esten vacios, en el caso contrario no se podrá enviar el formulario.</p>
+                <!--<p class="bg-danger">¡Formulario en construccion!</p>-->
+                <form class="bs-component" name="contactForm" ng-submit="submitForm()" novalidate ng-hide="enviado">
+                    <div class="form-group">
+                        <label class="control-label label-floating" for="nombre">Nombre</label>
+                        <input class="form-control" type="text" id="nombre" name="nombre" ng-model="formData.nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label label-floating" for="correo">Correo</label>
+                        <input class="form-control" type="email" id="correo" name="correo" ng-model="formData.correo" required>
+                        <!--
+                        <p class="help-block" ng-show="contactForm.correo.$dirty || contactForm.correo.$invalid">
+                            <span ng-show="contactForm.correo.$error.email">Email invalido.</span>
+                        </p>
+                        -->
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label label-floating" for="mensaje">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" ng-model="formData.mensaje" rows="10" required></textarea>
+                    </div>
+                    <!--
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LfAEAwUAAAAAE756vjwkjKzr0xdNxAFCoeyZOEe" name="captcha" ng-model="formData.captcha" required></div>
+                        <span ng-show="contactForm.captcha.$invalid">Este campo es requerido.</span>
+                    </div>
+                    -->
+                    <input class="btn btn-raised btn-default" type="submit" value="Enviar" ng-disabled="contactForm.nombre.$invalid || contactForm.correo.$invalid || contactForm.mensaje.$invalid">
+                </form>
+                <br>
+                <p ng-show="enviado" class="alert alert-success">El mensaje se ha enviado correctamente, en breve te enviare una respuesta.</p>
+            </div>
+        </div>
+
+	</div>
+</article>

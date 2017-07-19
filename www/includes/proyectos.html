@@ -1,0 +1,109 @@
+<header>
+	<div class="container color">
+		<h1 ng-attr-contenteditable="{{logued}}" ng-model="itemProyectos.titulo" strip-br="true"></h1>
+	</div>
+</header>
+
+<article>
+	<div class="container">
+		<h2>Introduccion</h2>
+		<div ng-attr-contenteditable="{{logued}}" ng-model="itemProyectos.introduccion" strip-br="true"></div>
+		<br>
+		
+		<div id="proy">
+			<div ng-show="logued">
+				<a class="thumbnail" ng-click="newProy()" href="">
+					<i class="material-icons">add</i>
+					<span class="hover">
+						<span>Agregar nuevo</span>
+					</span>
+				</a>
+			</div>
+			<div ng-repeat="proyecto in itemProyectos_interna | limitTo:limit+1 | orderBy:'id':true">
+				<style type="text/css">
+					#image_proy_{{ $index + 1 }} {
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, {{ proyecto.background.firstcolor }};
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -moz-linear-gradient(-45deg, {{ proyecto.background.firstcolor }} 0%, {{ proyecto.background.secondcolor }} 50%, {{ proyecto.background.thirdcolor }} 100%);
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -webkit-gradient(linear, left top, right bottom, color-stop(0%,{{ proyecto.background.firstcolor }}), color-stop(50%,{{ proyecto.background.secondcolor }}), color-stop(100%,{{ proyecto.background.thirdcolor }}));
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -webkit-linear-gradient(-45deg, {{ proyecto.background.firstcolor }} 0%,{{ proyecto.background.secondcolor }} 50%,{{ proyecto.background.thirdcolor }} 100%);
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -o-linear-gradient(-45deg, {{ proyecto.background.firstcolor }} 0%,{{ proyecto.background.secondcolor }} 50%,{{ proyecto.background.thirdcolor }} 100%);
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, -ms-linear-gradient(-45deg, {{ proyecto.background.firstcolor }} 0%,{{ proyecto.background.secondcolor }} 50%,{{ proyecto.background.thirdcolor }} 100%);
+                        background: url({{ proyecto.background.bg }}) {{ proyecto.background.position }} {{ proyecto.background.repeat }}, linear-gradient(135deg, {{ proyecto.background.firstcolor }} 0%,{{ proyecto.background.secondcolor }} 50%,{{ proyecto.background.thirdcolor }} 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ proyecto.background.firstcolor }}', endColorstr='{{ proyecto.background.thirdcolor }}',GradientType=1 );
+                    }
+                    #image_proy_{{ $index + 1 }} .background {
+						background-image: url({{ proyecto.thumbnail }});
+						background-size: cover;
+    					background-position: center center;
+					}
+				</style>
+				<a class="thumbnail" href="#/proyectos/{{proyecto.$id}}" id="image_proy_{{ $index + 1 }}" ng-click="gotoTop()">
+					<div class="loader color" ng-show="toggle == 0">
+						<svg class="circular">
+							<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+						</svg>
+					</div>
+					<div class="background"></div>
+					<span class="hover">
+						<i class="material-icons">search</i>
+					</span>
+				</a>
+
+
+
+				<span class="btn-group-sm edit-thumbnail" ng-show="logued">
+					<a href="" ng-click="open(proyecto)" class="btn btn-default btn-fab pull-left">
+						<i class="material-icons">mode_edit</i>
+					</a>
+					<a href="" ng-click="itemProyectos_interna.$remove(proyecto)"" class="btn btn-default btn-fab pull-right">
+						<i class="material-icons">delete_forever</i>
+					</a>
+				</span>
+
+				<script type="text/ng-template" id="popup.html">
+	                <div class="modal-header">
+	                    <h3 class="modal-title" id="modal-title">Thumbnail de {{ proyecto.titulo }}</h3>
+	                </div>
+	                <div class="modal-body" id="modal-body">
+						<form>
+                            <div class="row">
+                            	<div class="form-group col-xs-sm-12">
+                            		<div class="form-image">
+                            			<img ng-src="{{ proyecto.thumbnail }}">
+                            		</div>
+				                    <label class="control-label label-floating" for="thumbnail">Imagen thumbnail</label>
+									<input class="form-control" type="text" id="thumbnail"  ng-model="proyecto.thumbnail" />
+								</div>
+                            </div>
+                        </form>
+	                </div>
+	                <div class="modal-footer">
+	                    <button class="btn btn-raised btn-default" type="button" ng-click="close()">Cerrar</button>
+	                </div>
+	            </script>
+
+
+
+			</div>
+			<div ng-hide="limitForBtn >= lenght">
+				<a class="thumbnail" href="" ng-click="inc();">
+					<i class="material-icons">more_horiz</i>
+					<span class="hover">
+						<span>Más Proyectos</span>
+					</span>
+				</a>
+			</div>
+		</div>
+
+		<!--
+		<p class="text-center">
+			<a href="" ng-click="newProy()" class="btn btn-raised btn-default btn-lg">Añadir nuevo</a>
+		</p>
+		-->
+		<!--
+		<p class="text-center">
+			<a href="" ng-hide="limitForBtn >= lenght" ng-click="inc();" class="btn btn-raised btn-default btn-lg">Más proyectos</a>
+		</p>
+		-->
+	</div>
+</article>

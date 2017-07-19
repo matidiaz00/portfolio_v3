@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Carousel
+   ========================================================================== */
+
+.carousel {
+    text-align: center;
+    padding: 0;
+    .gradient(main);
+}
+
+ul[rn-carousel] {
+    width: 100%;
+    margin: 0 auto;
+    height: 450px;
+    @media @smartphone-ms { 
+        height: 500px;
+    }
+    @media @smartphone-md { 
+        height: 540px;
+    }
+    @media @tablet { 
+        .viewport-unit-cal(height, 100vh, -, 63px);
+        max-height: 640px;
+    }
+}
+
+.image_carousel {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    .transition(opacity);
+    /*
+    @media (max-height: 570px) { 
+        background-image: none !important;
+    }
+    */
+    /*
+    @media (max-width: 490px) { 
+        background-size: 90%;
+    }
+    */
+
+    background-size: 90% auto;
+    @media @smartphone-md { 
+        background-size: auto 65%;
+    }
+    @media @smartphone-lg { 
+        background-size: auto 70%;
+    }
+    @media @tablet { 
+        background-size: auto;
+    }
+}
+
+.carousel ul.logued > li:hover > .image_carousel {
+    opacity: 0.5;
+}
+
+.image_edit {
+    position: absolute;
+    bottom: 30%;
+    z-index: 3;
+    margin-left: -50px;
+    opacity: 0;
+}
+
+.image_edit a .material-icons {
+    font-size: 100px;
+    opacity: 1;
+    .transition(opacity);
+}
+
+.image_edit a:focus {
+    outline: 0;
+}
+
+.image_edit a:hover .material-icons {
+    opacity: 0.9;
+}
+
+.carousel ul > li:hover > .image_edit {
+    opacity: 1;
+}
+
+.carousel_wrapper {
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.carousel_wrapper .container {
+    padding-top: 25px;
+    @media @tablet { 
+        padding-top: 60px;
+    }
+    /*
+    padding-top: 6%;
+    @media (max-height: 570px) { 
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-top: 0;
+    }
+    */
+}
+
+.add_slide {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.add_slide span {
+    margin-left: 5px;
+}
+
+.color_slide {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.color_slide span {
+    margin-right: 5px;
+}
+
+.rn-carousel-control.rn-carousel-control-prev:before,
+.rn-carousel-control.rn-carousel-control-next:before {
+    font-family: 'Material Icons';
+    font-size: 65px;
+}
+
+.rn-carousel-control.rn-carousel-control-prev:before {
+    content: "\E314";
+}
+
+.rn-carousel-control.rn-carousel-control-next:before {
+    content: "\E315";
+}

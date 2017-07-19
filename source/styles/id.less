@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Independientes
+   ========================================================================== */
+
+/* HABILIDADES */
+#hab {
+	margin: -15px;
+}
+
+#hab > div {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	padding: 15px;
+	@media @smartphone-md {
+		width: 50%;
+	}
+	@media @desktop {
+		width: 25%;
+	}
+}
+
+/* EXPERIENCIA */
+#carousel-exp {/*carrousel.less*/
+    position: relative;
+}
+
+#carousel-exp ul[rn-carousel] {/*carrousel.less*/
+    height: 580px;
+	width: 100%;
+    margin-top: 100px;
+    @media @smartphone-md {
+        width: -webkit-calc(100% - 130px);
+        width: -moz-calc(100% - 130px);
+        width: calc(100% - 130px);
+        margin-top: 0;
+    }
+}
+
+#carousel-exp ul[rn-carousel] > li {/*carrousel.less*/
+    width: 100%;
+    @media @tablet {
+    	width: 50%;
+    }
+    @media @desktop-lg {
+    	width: 33.33333333%;
+    }
+}
+
+#carousel-exp ul[rn-carousel] > li > div {/*carrousel.less*/
+	max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#carousel-exp ul[rn-carousel] + .rn-carousel-controls {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    @media @smartphone-md {
+        position: initial;
+    }
+}
+
+#carousel-exp ul[rn-carousel] + .rn-carousel-controls > span {/*carrousel.less*/
+    color: @main-color;
+    position: relative;
+    display: inline-block;
+    @media @smartphone-md {
+        position: absolute;
+    }
+}
+
+#carousel-exp ul[rn-carousel] + .rn-carousel-controls > span.rn-carousel-control-prev {/*carrousel.less*/
+    float: left;
+    @media @smartphone-md {
+        float: none;
+        left: 15px;
+    }
+}
+#carousel-exp ul[rn-carousel] + .rn-carousel-controls > span.rn-carousel-control-next {/*carrousel.less*/
+    float: right;
+    @media @smartphone-md {
+        float: none;
+        right: 15px;
+    }
+}
+
+#modal-body .imagen .centerimage,
+#carousel-exp .card .imagen {/*card.less*/
+    height: 250px;
+}
+
+#modal-body .imagen img,
+#carousel-exp .card .imagen img {/*card.less*/
+    max-height: 210px;
+}
+
+#modal-body .imagen form {/*card.less*/
+    margin: 0 30px 23px;
+}
+
+#info-exp {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* PROYECTOS */
+#proy {
+	margin: -15px;
+	font-size: 0;
+	text-align: center;
+    @media @tablet {
+        text-align: left;
+    }
+}
+
+#proy > div {
+	display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 30px);
+    padding-bottom: calc(100% - 30px);
+    margin: 15px;
+    position: relative;
+    /*max-height: 263px;
+    max-width: 263px;*/
+    z-index: 1;
+    @media @smartphone-ms {
+        width: calc(50% - 30px);
+        padding-bottom: calc(50% - 30px);
+    }
+    @media @smartphone-lg {
+    	width: calc(41.66666667% - 30px);
+	    padding-bottom: calc(41.66666667% - 30px);
+    }
+    @media @tablet {
+    	width: calc(33.33333333% - 30px);
+	    padding-bottom: calc(33.33333333% - 30px);
+    }
+    @media @desktop {
+    	width: calc(25% - 30px);
+	    padding-bottom: calc(25% - 30px);
+    }
+}
+
+#proy > div .thumbnail .background,
+#proy > div .thumbnail {/*thumbnail.less*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: initial;
+    /*max-height: 263px;
+    max-width: 263px;*/
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    .transition(opacity);
+    border-radius: 4px;
+}
+
+#proy > div .thumbnail:hover .background {/*thumbnail.less*/
+    @media @desktop-lg {
+        opacity: 0.3;
+    }
+}
+
+/* PROYECTOS INTERNA */
+#carousel-proyInterna ul[rn-carousel] {/*carrousel.less*/
+    height: calc(100vw - 30px);
+    max-height: 450px;
+    margin-bottom: 30px;
+}
+
+#carousel-proyInterna .image_edit {/*carrousel.less*/
+    bottom: 50%;
+    margin-bottom: -50px;
+}
+
+#carousel-proyInterna .carousel {
+    max-width: 450px;
+    margin: 0 auto;
+    @media @tablet {
+        max-width: 100%;
+    }
+}
+
+#tecnologias {
+    @media @smartphone-ms {
+        padding-bottom: 50px;
+    }
+}
+
+/* CURRICULUM */
+#cvcard .card .imagen img {/*card.less*/
+    /*padding: 0 50px;*/
+    margin: 0 auto;
+    max-height: 250px;
+}
+
+#cvcard > div:first-child {/*card.less*/
+    margin-bottom: 50px;
+    @media @desktop {
+        margin-bottom: 0;
+    }
+}
+
+/* CONTACTO */
+#contactform {
+    margin-top: 50px;
+    @media @desktop {
+        margin-top: 0;
+    }
+}
+
+/* Especifico por los botones laterales */
+#carousel-exp ul[rn-carousel] {/*carrousel.less*/
+	@media (min-width: 1330px) {
+	    width: 100%;
+	}
+}
+#carousel-exp ul[rn-carousel] + .rn-carousel-controls > span.rn-carousel-control-prev {/*carrousel.less*/
+	@media (min-width: 1330px) {
+    	left: -2em;
+    }
+}
+#carousel-exp ul[rn-carousel] + .rn-carousel-controls > span.rn-carousel-control-next {/*carrousel.less*/
+	@media (min-width: 1330px) {
+	    right: -2em;
+	}
+}
