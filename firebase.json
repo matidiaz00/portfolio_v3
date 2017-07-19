@@ -1,0 +1,437 @@
+{
+  "01_sobre_mi" : {
+    "imagen" : {
+      "001" : "#",
+    },
+    "introduccion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<br/></p>",
+    "sobre_mi" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<br></p>",
+    "subtitulo" : "Sobre mí",
+    "titulo" : "Sobre mí"
+  },
+  "02_habilidades" : {
+    "columnas" : {
+      "001" : {
+        "icono" : "#",
+        "titulo" : "Diseño"
+      },
+      "002" : {
+        "icono" : "#",
+        "titulo" : "Front-end"
+      },
+      "003" : {
+        "icono" : "#",
+        "titulo" : "Back-end"
+      },
+      "004" : {
+        "icono" : "#",
+        "titulo" : "más"
+      }
+    },
+    "informacion" : {
+      "texto" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+      "titulo" : "Inglés"
+    },
+    "introduccion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<br></p>",
+    "titulo" : "Habilidades"
+  },
+  "03_experiencia" : {
+    "experiencias" : {
+      "001" : {
+        "ancho" : "250",
+        "cargo" : "Lorem ipsum",
+        "color" : "#000",
+        "fecha" : "Lorem ipsum",
+        "firstcolor" : "#fc650a",
+        "imagen" : "#",
+        "informacion_empresa" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "mis_tareas" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<br></p>",
+        "puesto" : "Lorem ipsum",
+        "razon_abandono" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "secondcolor" : "#fc650a",
+        "thirdcolor" : "#fc650a",
+        "titulo" : "Lorem ipsum"
+      },
+      "002" : {
+        "ancho" : "250",
+        "cargo" : "Lorem ipsum",
+        "color" : "#000",
+        "fecha" : "Lorem ipsum",
+        "firstcolor" : "#fc650a",
+        "imagen" : "#",
+        "informacion_empresa" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "mis_tareas" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<br></p>",
+        "puesto" : "Lorem ipsum",
+        "razon_abandono" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "secondcolor" : "#fc650a",
+        "thirdcolor" : "#fc650a",
+        "titulo" : "Lorem ipsum"
+      },
+      "003" : {
+        "ancho" : "250",
+        "cargo" : "Lorem ipsum",
+        "color" : "#000",
+        "fecha" : "Lorem ipsum",
+        "firstcolor" : "#fc650a",
+        "imagen" : "#",
+        "informacion_empresa" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "mis_tareas" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<br></p>",
+        "puesto" : "Lorem ipsum",
+        "razon_abandono" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "secondcolor" : "#fc650a",
+        "thirdcolor" : "#fc650a",
+        "titulo" : "Lorem ipsum"
+      }
+    },
+    "introduccion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+    "titulo" : "Experiencia laboral"
+  },
+  "04_proyectos" : {
+    "introduccion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+    "proyectos" : {
+      "001" : {
+        "background" : {
+          "bg" : "#",
+          "firstcolor" : "#62aee0",
+          "position" : "0 0",
+          "repeat" : "no-repeat",
+          "secondcolor" : "#62aee0",
+          "thirdcolor" : "#62aee0"
+        },
+        "color" : "#61adde",
+        "cross" : {
+          "android" : "4.4",
+          "chrome" : "58",
+          "edge" : "14",
+          "explorer" : "11",
+          "firefox" : "53",
+          "ios" : "6",
+          "safari" : "7.1",
+          "windowsp" : "8.1"
+        },
+        "fecha" : "Lorem ipsum",
+        "informacion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "thumbnail" : "#",
+        "titulo" : "Lorem Ipsum"
+      },
+      "002" : {
+        "background" : {
+          "bg" : "#",
+          "firstcolor" : "#62aee0",
+          "position" : "0 0",
+          "repeat" : "no-repeat",
+          "secondcolor" : "#62aee0",
+          "thirdcolor" : "#62aee0"
+        },
+        "color" : "#61adde",
+        "cross" : {
+          "android" : "4.4",
+          "chrome" : "58",
+          "edge" : "14",
+          "explorer" : "11",
+          "firefox" : "53",
+          "ios" : "6",
+          "safari" : "7.1",
+          "windowsp" : "8.1"
+        },
+        "fecha" : "Lorem ipsum",
+        "informacion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "thumbnail" : "#",
+        "titulo" : "Lorem Ipsum"
+      },
+      "003" : {
+        "background" : {
+          "bg" : "#",
+          "firstcolor" : "#62aee0",
+          "position" : "0 0",
+          "repeat" : "no-repeat",
+          "secondcolor" : "#62aee0",
+          "thirdcolor" : "#62aee0"
+        },
+        "color" : "#61adde",
+        "cross" : {
+          "android" : "4.4",
+          "chrome" : "58",
+          "edge" : "14",
+          "explorer" : "11",
+          "firefox" : "53",
+          "ios" : "6",
+          "safari" : "7.1",
+          "windowsp" : "8.1"
+        },
+        "fecha" : "Lorem ipsum",
+        "informacion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "thumbnail" : "#",
+        "titulo" : "Lorem Ipsum"
+      },
+      "004" : {
+        "background" : {
+          "bg" : "#",
+          "firstcolor" : "#62aee0",
+          "position" : "0 0",
+          "repeat" : "no-repeat",
+          "secondcolor" : "#62aee0",
+          "thirdcolor" : "#62aee0"
+        },
+        "color" : "#61adde",
+        "cross" : {
+          "android" : "4.4",
+          "chrome" : "58",
+          "edge" : "14",
+          "explorer" : "11",
+          "firefox" : "53",
+          "ios" : "6",
+          "safari" : "7.1",
+          "windowsp" : "8.1"
+        },
+        "fecha" : "Lorem ipsum",
+        "informacion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "thumbnail" : "#",
+        "titulo" : "Lorem Ipsum"
+      },
+      "005" : {
+        "background" : {
+          "bg" : "#",
+          "firstcolor" : "#62aee0",
+          "position" : "0 0",
+          "repeat" : "no-repeat",
+          "secondcolor" : "#62aee0",
+          "thirdcolor" : "#62aee0"
+        },
+        "color" : "#61adde",
+        "cross" : {
+          "android" : "4.4",
+          "chrome" : "58",
+          "edge" : "14",
+          "explorer" : "11",
+          "firefox" : "53",
+          "ios" : "6",
+          "safari" : "7.1",
+          "windowsp" : "8.1"
+        },
+        "fecha" : "Lorem ipsum",
+        "informacion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "thumbnail" : "#",
+        "titulo" : "Lorem Ipsum"
+      },
+      "006" : {
+        "background" : {
+          "bg" : "#",
+          "firstcolor" : "#62aee0",
+          "position" : "0 0",
+          "repeat" : "no-repeat",
+          "secondcolor" : "#62aee0",
+          "thirdcolor" : "#62aee0"
+        },
+        "color" : "#61adde",
+        "cross" : {
+          "android" : "4.4",
+          "chrome" : "58",
+          "edge" : "14",
+          "explorer" : "11",
+          "firefox" : "53",
+          "ios" : "6",
+          "safari" : "7.1",
+          "windowsp" : "8.1"
+        },
+        "fecha" : "Lorem ipsum",
+        "informacion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "link" : {
+          "texto" : "Sitio",
+          "url" : "#"
+        },
+        "thumbnail" : "#",
+        "titulo" : "Lorem Ipsum"
+      }
+    },
+    "titulo" : "Proyectos"
+  },
+  "05_curriculum" : {
+    "columnas" : {
+      "001" : {
+        "archivo" : "#",
+        "fecha" : "Lorem Ipsum",
+        "imagen" : "#",
+        "informacion_extra" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "titulo" : "Lorem Ipsum"
+      },
+      "002" : {
+        "archivo" : "#",
+        "fecha" : "Lorem Ipsum",
+        "imagen" : "#",
+        "informacion_extra" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+        "titulo" : "Lorem Ipsum"
+      }
+    },
+    "introduccion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>",
+    "titulo" : "Curriculum"
+  },
+  "06_contacto" : {
+    "celular" : "1111111111",
+    "correo" : "prueba@prueba.com.ar",
+    "introduccion" : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<br></p>",
+    "redes_sociales" : {
+      "01" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 14.3 8.9\" style=\"enable-background:new 0 0 14.3 8.9;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path id=\"Behance\" sketch:type=\"MSShapeGroup\" class=\"st0\" d=\"M9.1,1.5h3.8V0.4H9.1V1.5L9.1,1.5z M10,3.9c-0.2,0.2-0.4,0.6-0.5,1 \th2.9c0-0.4-0.2-0.8-0.5-1c-0.3-0.2-0.6-0.3-1-0.3C10.6,3.5,10.3,3.6,10,3.9L10,3.9L10,3.9z M12.6,2.4c0.5,0.2,0.8,0.5,1.1,1 \tc0.3,0.4,0.4,0.8,0.5,1.3c0,0.3,0.1,0.7,0.1,1.3H9.5c0,0.6,0.3,1.1,0.7,1.4c0.3,0.2,0.6,0.2,0.9,0.2c0.4,0,0.7-0.1,0.9-0.3 \tc0.1-0.1,0.3-0.3,0.4-0.4h1.7c0,0.4-0.3,0.8-0.6,1.2c-0.6,0.6-1.4,0.9-2.5,0.9c-0.9,0-1.6-0.3-2.3-0.8c-0.7-0.5-1-1.4-1-2.6 \tc0-1.1,0.3-2,0.9-2.6c0.6-0.6,1.4-0.9,2.3-0.9C11.6,2.1,12.1,2.2,12.6,2.4L12.6,2.4L12.6,2.4z M1.8,4.9v2.3h2.1 \tc0.4,0,0.7-0.1,0.9-0.2C5.2,6.8,5.4,6.5,5.4,6c0-0.5-0.2-0.8-0.6-0.9C4.6,4.9,4.3,4.9,3.9,4.9H1.8L1.8,4.9z M1.8,1.5v1.9h2.1 \tc0.4,0,0.7-0.1,0.9-0.2c0.2-0.1,0.4-0.4,0.4-0.8C5.2,2,5,1.8,4.7,1.6c-0.3-0.1-0.6-0.1-1-0.1H1.8L1.8,1.5z M6.6,0.9 \tC6.8,1.3,7,1.7,7,2.3c0,0.5-0.1,1-0.4,1.3C6.4,3.7,6.2,3.9,5.9,4c0.4,0.2,0.8,0.4,1,0.8c0.2,0.3,0.3,0.8,0.3,1.3 \tc0,0.5-0.1,1-0.4,1.4C6.7,7.7,6.5,8,6.2,8.1c-0.3,0.2-0.6,0.4-1,0.4C4.8,8.7,4.4,8.7,4,8.7H0V0h4.3C5.3,0,6.1,0.3,6.6,0.9L6.6,0.9 \tL6.6,0.9z\"/> </svg>",
+        "id" : "behance",
+        "texto" : "Behance",
+        "url" : "#"
+      },
+      "02" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 10.5 11.6\" style=\"enable-background:new 0 0 10.5 11.6;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path class=\"st0\" d=\"M5.2,1.3h-4L0,0v11.6h6.3c0,0,4.2-0.4,4.2-5.1C10.5,6.6,10.5,1.3,5.2,1.3z M5.2,10.2c-2,0-3.7-1.6-3.7-3.7 \ts1.6-3.7,3.7-3.7s3.7,1.6,3.7,3.7S7.3,10.2,5.2,10.2z\"/> <path class=\"st0\" d=\"M6,5.9c-0.9,0-1.7,0.7-1.7,1.7S5.1,9.2,6,9.2s1.7-0.7,1.7-1.7S6.9,5.9,6,5.9z M6,8.2c-0.4,0-0.7-0.3-0.7-0.7 \tc0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C6.7,7.9,6.3,8.2,6,8.2z\"/> </svg>",
+        "id" : "drawcrowd",
+        "texto" : "Drawcrowd",
+        "url" : "#"
+      },
+      "03" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 6.8 13.2\" style=\"enable-background:new 0 0 6.8 13.2;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path class=\"st0\" d=\"M6.5,7.2l0.3-2.3H4.4V3.3c0-0.7,0.2-1.1,1.2-1.1l1.2,0V0.1C6.6,0.1,5.9,0,5,0C3.2,0,2,1.1,2,3.1v1.7H0v2.3h2v6 \th2.4v-6H6.5z\"/> </svg>",
+        "id" : "facebook",
+        "texto" : "Facebook",
+        "url" : "#"
+      },
+      "04" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 16.3 7.1\" style=\"enable-background:new 0 0 16.3 7.1;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path class=\"st0\" d=\"M16.3,3.5c0,2-1.6,3.5-3.6,3.5c-2,0-3.6-1.6-3.6-3.5c0-2,1.6-3.5,3.6-3.5C14.7,0,16.3,1.6,16.3,3.5\"/> <path class=\"st0\" d=\"M7.2,3.5c0,2-1.6,3.5-3.6,3.5C1.6,7.1,0,5.5,0,3.5C0,1.6,1.6,0,3.6,0C5.6,0,7.2,1.6,7.2,3.5\"/> </svg>",
+        "id" : "flickr",
+        "texto" : "Flickr",
+        "url" : "#"
+      },
+      "05" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 12.6 12.6\" style=\"enable-background:new 0 0 12.6 12.6;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path id=\"Instagram\" sketch:type=\"MSShapeGroup\" class=\"st0\" d=\"M11.1,11.5H1.6c-0.2,0-0.4-0.2-0.4-0.4V5.1h1.6 \tC2.6,5.4,2.5,6,2.5,6.3c0,2.1,1.7,3.8,3.8,3.8c2.1,0,3.8-1.7,3.8-3.8c0-0.4,0-0.9-0.3-1.2h1.6v5.9C11.5,11.3,11.3,11.5,11.1,11.5 \t M6.3,3.9c1.3,0,2.4,1.1,2.4,2.4c0,1.3-1.1,2.4-2.4,2.4C5,8.8,3.9,7.7,3.9,6.3C3.9,5,5,3.9,6.3,3.9 M9.5,1.6h1.2 \tc0.2,0,0.4,0.2,0.4,0.4v1.2c0,0.2-0.2,0.4-0.4,0.4H9.5c-0.2,0-0.4-0.2-0.4-0.4V2C9.1,1.8,9.3,1.6,9.5,1.6 M11.1,0H1.5 \tC0.7,0,0,0.7,0,1.5v9.6c0,0.8,0.7,1.5,1.5,1.5h9.6c0.8,0,1.5-0.7,1.5-1.5V1.5C12.6,0.7,12,0,11.1,0\"/> </svg>",
+        "id" : "instagram",
+        "texto" : "Instagram",
+        "url" : "#"
+      },
+      "06" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 12 10.9\" style=\"enable-background:new 0 0 12 10.9;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path id=\"LinkedIn\" sketch:type=\"MSShapeGroup\" class=\"st0\" d=\"M12,10.9H9.4V7.1c0-1-0.4-1.7-1.3-1.7C7.3,5.4,7,5.9,6.8,6.3 \tC6.7,6.5,6.7,6.7,6.7,6.9v4H4.1c0,0,0-6.8,0-7.4h2.6v1.2c0.2-0.5,1-1.2,2.3-1.2c1.7,0,3,1.1,3,3.4V10.9L12,10.9z M1.4,2.6L1.4,2.6 \tC0.6,2.6,0,2,0,1.3C0,0.6,0.6,0,1.4,0c0.9,0,1.4,0.6,1.4,1.3C2.8,2,2.3,2.6,1.4,2.6L1.4,2.6L1.4,2.6z M0.3,3.5h2.3v7.4H0.3V3.5 \tL0.3,3.5z\"/> </svg>",
+        "id" : "linkedin",
+        "texto" : "Linkedin",
+        "url" : "#"
+      },
+      "07" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 13.1 7.3\" style=\"enable-background:new 0 0 13.1 7.3;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path class=\"st0\" d=\"M4.9,5.7v1.5H0V0h1.8v5.7H4.9z\"/> <path class=\"st0\" d=\"M10.1,0c1.6,0,2.7,0.7,2.7,1.8c0,0.8-0.5,1.4-1.2,1.6c0.9,0.2,1.5,0.9,1.5,1.8c0,1.2-1.1,2-2.8,2H6.7V0H10.1z \t M8.5,2.9H10c0.5,0,0.9-0.3,0.9-0.8c0-0.5-0.3-0.7-0.9-0.7H8.5V2.9z M8.5,5.8H10c0.7,0,1.1-0.3,1.1-0.8c0-0.5-0.4-0.8-1.1-0.8H8.5 \tV5.8z\"/> </svg>",
+        "id" : "lookbook",
+        "texto" : "LookBook",
+        "url" : "#"
+      },
+      "08" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 15.4 8.7\" style=\"enable-background:new 0 0 15.4 8.7;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path id=\"Soundcloud\" sketch:type=\"MSShapeGroup\" class=\"st0\" d=\"M0,7.1c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.3,0.1,0.4,0.1 \tc0.1,0,0.3-0.1,0.3-0.2C1,7.4,1.1,7.3,1.1,7.1V5c0-0.2-0.1-0.3-0.2-0.4C0.8,4.5,0.7,4.5,0.5,4.5c-0.1,0-0.3,0.1-0.4,0.2 \tC0.1,4.7,0,4.9,0,5V7.1L0,7.1z M1.7,8c0,0.1,0,0.2,0.1,0.3C1.9,8.4,2,8.4,2.2,8.4c0.2,0,0.3,0,0.4-0.1C2.7,8.3,2.7,8.2,2.7,8V3.1 \tc0-0.1-0.1-0.3-0.2-0.4C2.5,2.6,2.3,2.6,2.2,2.6C2,2.6,1.9,2.6,1.8,2.7C1.7,2.8,1.7,3,1.7,3.1V8L1.7,8z M3.3,8.3 \tc0,0.1,0.1,0.2,0.2,0.3c0.1,0.1,0.2,0.1,0.4,0.1c0.2,0,0.3,0,0.4-0.1c0.1-0.1,0.1-0.2,0.1-0.3V3.8c0-0.2-0.1-0.3-0.2-0.4 \tC4.1,3.3,4,3.2,3.8,3.2c-0.1,0-0.3,0.1-0.4,0.2C3.3,3.5,3.3,3.6,3.3,3.8L3.3,8.3L3.3,8.3z M4.9,8.3c0,0.3,0.2,0.4,0.5,0.4 \tC5.8,8.7,6,8.5,6,8.3V1c0-0.4-0.1-0.6-0.4-0.7c-0.2,0-0.3,0-0.5,0.1C5,0.6,4.9,0.8,4.9,1L4.9,8.3L4.9,8.3z M6.6,8.5V0.6 \tc0-0.3,0.1-0.4,0.2-0.5C7.2,0,7.5,0,7.8,0c0.7,0,1.4,0.2,2,0.5C10.5,0.9,11,1.4,11.4,2c0.4,0.6,0.6,1.3,0.7,2 \tc0.3-0.1,0.6-0.2,0.9-0.2c0.7,0,1.2,0.2,1.7,0.7c0.5,0.5,0.7,1.1,0.7,1.7c0,0.7-0.2,1.3-0.7,1.7c-0.5,0.5-1,0.7-1.7,0.7l-6.2,0 \tc0,0-0.1,0-0.1-0.1C6.6,8.6,6.6,8.5,6.6,8.5L6.6,8.5L6.6,8.5z\"/> </svg>",
+        "id" : "soundcloud",
+        "texto" : "Soundcloud",
+        "url" : "#"
+      },
+      "09" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 7.6 13.4\" style=\"enable-background:new 0 0 7.6 13.4;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path id=\"Tumblr\" sketch:type=\"MSShapeGroup\" class=\"st0\" d=\"M6.9,10.7c-0.2,0.1-0.7,0.2-1.1,0.2c-1.1,0-1.3-0.8-1.3-1.3V5.5h2.6v-2 \tH4.6V0H2.7c0,0-0.1,0-0.1,0.1C2.5,1.1,2,3,0,3.7v1.7h1.3v4.4c0,1.5,1.1,3.6,3.9,3.6c1,0,2-0.4,2.3-0.8L6.9,10.7\"/> </svg>",
+        "id" : "tumblr",
+        "texto" : "Tumblr",
+        "url" : "#"
+      },
+      "10" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 12.3 10.2\" style=\"enable-background:new 0 0 12.3 10.2;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path id=\"Twitter\" sketch:type=\"MSShapeGroup\" class=\"st0\" d=\"M12.3,1.2c-0.5,0.2-0.9,0.3-1.4,0.4c0.5-0.3,0.9-0.8,1.1-1.4 \tc-0.5,0.3-1,0.5-1.6,0.6C9.9,0.3,9.2,0,8.5,0C7.1,0,6,1.2,6,2.6C6,2.8,6,3,6,3.2C3.9,3.1,2.1,2,0.9,0.5C0.6,0.9,0.5,1.3,0.5,1.8 \tc0,0.9,0.4,1.7,1.1,2.1c-0.4,0-0.8-0.1-1.1-0.3v0c0,1.3,0.9,2.3,2,2.5C2.3,6.2,2.1,6.2,1.8,6.2c-0.2,0-0.3,0-0.5,0 \tC1.7,7.2,2.6,8,3.7,8C2.9,8.7,1.8,9.1,0.6,9.1c-0.2,0-0.4,0-0.6,0c1.1,0.7,2.4,1.2,3.9,1.2c4.6,0,7.2-3.9,7.2-7.3c0-0.1,0-0.2,0-0.3 \tC11.5,2.2,11.9,1.7,12.3,1.2\"/> </svg>",
+        "id" : "twitter",
+        "texto" : "Twitter",
+        "url" : "#"
+      },
+      "11" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 10.8 12.4\" style=\"enable-background:new 0 0 10.8 12.4;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path id=\"Vine\" sketch:type=\"MSShapeGroup\" class=\"st0\" d=\"M10.8,6.2c-0.3,0.1-0.6,0.1-0.9,0.1c-1.6,0-2.7-1.1-2.7-3 \tc0-0.9,0.4-1.4,0.9-1.4c0.5,0,0.8,0.4,0.8,1.3c0,0.5-0.1,1.1-0.2,1.4c0,0,0.5,0.8,1.8,0.6c0.3-0.6,0.4-1.4,0.4-2.1c0-1.9-1-3-2.7-3 \tC6.3,0,5.2,1.4,5.2,3.3c0,1.8,0.9,3.4,2.3,4.1c-0.6,1.2-1.3,2.2-2.1,3c-1.4-1.7-2.7-4-3.2-8.5H0c1,7.5,3.9,9.9,4.6,10.4 \tc0.4,0.3,0.8,0.2,1.2,0c0.6-0.4,2.5-2.2,3.5-4.4c0.4,0,1-0.1,1.5-0.2V6.2z\"/> </svg>",
+        "id" : "vine",
+        "texto" : "Vine",
+        "url" : "#"
+      },
+      "-KluVxcYGeh6rwqai-_G" : {
+        "icono" : "<?xml version=\"1.0\" encoding=\"utf-8\"?> <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" \t viewBox=\"0 0 12.9 9.1\" style=\"enable-background:new 0 0 12.9 9.1;\" xml:space=\"preserve\"> <style type=\"text/css\"> \t.st0{fill:#3A995E;} </style> <path id=\"Youtube\" sketch:type=\"MSShapeGroup\" class=\"st0\" d=\"M5.1,6.3l0-3.7l3.5,1.8L5.1,6.3z M12.8,2c0,0-0.1-0.9-0.5-1.3 \tc-0.5-0.5-1-0.5-1.3-0.6C9.2,0,6.5,0,6.5,0h0c0,0-2.7,0-4.5,0.1c-0.3,0-0.8,0-1.3,0.6C0.3,1.1,0.1,2,0.1,2S0,3,0,4.1v1 \tc0,1.1,0.1,2.1,0.1,2.1s0.1,0.9,0.5,1.3C1.1,9,1.8,9,2.1,9c1,0.1,4.4,0.1,4.4,0.1S9.2,9.1,11,9c0.3,0,0.8,0,1.3-0.6 \tc0.4-0.4,0.5-1.3,0.5-1.3s0.1-1.1,0.1-2.1v-1C12.9,3,12.8,2,12.8,2L12.8,2z\"/> </svg>",
+        "id" : "youtube",
+        "texto" : "Youtube",
+        "url" : "#"
+      }
+    },
+    "skype" : "prueba",
+    "titulo" : "Contacto"
+  },
+  "carousel" : {
+    "01" : {
+      "imagen_desktop" : "#",
+      "imagen_mobile" : "#",
+      "subtitulo" : "",
+      "titulo" : "<h1>Lorem Ipsum<br></h1>"
+    }
+  },
+  "categorias" : {
+    "-KWJ5Ykr71797ulI0KWJ" : {
+      "porcentaje" : 0,
+      "texto" : "Lorem Ipsum"
+    },
+    "-KjGgHFFRj4TekX2fwhK" : {
+      "porcentaje" : 0,
+      "texto" : "Lorem Ipsum"
+    },
+    "-KjGgJCXsB1SRg6hvgTa" : {
+      "porcentaje" : 0,
+      "texto" : "Lorem Ipsum"
+    },
+    "-KjGgKlbHLt8Y77lOwg5" : {
+      "porcentaje" : 0,
+      "texto" : "Lorem Ipsum"
+    }
+  },
+  "menu" : {
+    "01" : {
+      "texto" : "Inicio",
+      "url" : "inicio"
+    },
+    "02" : {
+      "texto" : "Sobre mí",
+      "url" : "sobre_mi"
+    },
+    "03" : {
+      "texto" : "Habilidades",
+      "url" : "habilidades"
+    },
+    "04" : {
+      "texto" : "Experiencia",
+      "url" : "experiencia"
+    },
+    "05" : {
+      "texto" : "Proyectos",
+      "url" : "proyectos"
+    },
+    "06" : {
+      "texto" : "Curriculum",
+      "url" : "curriculum"
+    },
+    "07" : {
+      "texto" : "Contacto",
+      "url" : "contacto"
+    }
+  }
+}
