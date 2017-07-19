@@ -14,13 +14,13 @@ Estos son los archivos del sitio de mi porfolio actual, es una version beta porq
 
 Para poder iniciar este sitio es necesario tener instalado [NodeJS](https://nodejs.org/es/), tener conocimiento basico de AngularJS y del manejo de la consola de NodeJS y por ultimo tener un usuario y aplicación lista en [Firebase](https://firebase.google.com/).
 
-
 * Clonar repo: `git clone https://github.com/matidiaz00/matidiazapp-beta.git`
 * Instalar los complementos: `npm install`
-* Cambiar firebase id.
+* Cambiar los datos de Firebase:
   * Abrir el archivo a editar: `source/javascript/main.js`
   * Ir a tu cuenta en Firebase y obtener los datos de tu aplicacion.
-  * Ejemplo:<br>```javascript
+  * Ejemplo:
+```javascript
 var config = {
   apiKey: "<API_KEY>",
   authDomain: "<PROJECT_ID>.firebaseapp.com",
